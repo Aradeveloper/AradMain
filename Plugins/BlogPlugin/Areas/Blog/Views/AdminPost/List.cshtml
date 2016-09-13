@@ -1,0 +1,103 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+}
+<!-- Default table -->
+<div class="panel panel-default">
+    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table2"></i> پست های وبسایت</h6><p class="pull-left">@Html.ActionLink("پست جدید", BMVC.Blog.AdminPost.ActionNames.Create, BMVC.Blog.AdminPost.Name, new { Id = ViewBag.BlogId, area = BMVC.Blog.Name }, new { @class = "btn btn-sm btn-primary" })</p></div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>تیتر</th>
+                    <th>خلاصه</th>
+                    <th>وضعیت انتشار</th>
+                    <th>پسوند لینک</th>
+                    <th>تعداد دیدگاه ها</th>
+                    <th>تعداد دیدگاه تایید شده</th>
+                    <th>تعداد دیدگاه تایید نشده</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@Html.DisplayFor(a => item.Id)</td>
+                            <td>@Html.DisplayFor(a => item.Title)</td>
+                            <td>@Html.DisplayFor(a => item.Summary)</td>
+                            <td>
+                                @if (item.Published)
+                                {
+                                    <text>
+                                        <i class="fa fa-check text-success"></i>
+                                    </text>
+                                }
+                                else
+                                {
+                                    <text>
+                                        <i class="fa fa-minus text-warning"></i>
+                                    </text>
+                                }
+                            </td>
+                            <td>@Html.DisplayFor(a => item.Slug)</td>
+                            <td>@Html.DisplayFor(a => item.CommentCount)</td>
+                            <td class="text-center">
+                                        @Html.DisplayFor(a => item.CommentProve)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(a => item.CommentUnprove)
+                                    </td>
+                            
+
+                            <td>
+                                @Html.ActionLink("ویرایش", BMVC.Blog.AdminPost.ActionNames.Edit, BMVC.Blog.AdminPost.Name, new { Id = item.Id, area = BMVC.Blog.Name }, new { @class = "btn btn-sm btn-primary" })
+                                @Html.ActionLink("دیدگاه ها", BMVC.Blog.AdminComment.ActionNames.List, BMVC.Blog.AdminComment.Name, new { Id = item.Id, area = BMVC.Blog.Name }, new { @class = "btn btn-sm btn-primary" })
+                                <button class="btn btn-danger " onclick="Delete(@item.Id)">حذف<i class="icon-trash "></i></button>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /default table -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="bodymodal">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script>
+        function Delete(id) {
+
+            $.ajax({
+                url: "/Blog/AdminPost/Delete/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('حذف');
+                $("#bodymodal").html(result);
+
+            });
+        }
+    </script>
+}

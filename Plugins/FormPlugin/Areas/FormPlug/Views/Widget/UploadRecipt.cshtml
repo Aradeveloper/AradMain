@@ -1,0 +1,88 @@
+﻿@model FormPlugin.ViewModel.AddOrUpdateReceipt
+@{
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+    ViewBag.Title = "فرم ارسال واریز";
+
+}
+<!-- Right labels -->
+@using (Html.BeginForm(FoMVC.FormPlug.Widget.ActionNames.UploadRecipt, FoMVC.FormPlug.Widget.Name, new { area = FoMVC.FormPlug.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "AddReciept", enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default ">
+        <div class="panel-heading ">
+            <strong>سفارش دهید</strong>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.BankName)
+                    @Html.ValidationMessageFor(m => m.BankName, "", new { @class = "text-danger" })
+                </div>
+                <span>@Html.LabelFor(m => m.BankName, new { @class = "col-md-2 control-label" })</span>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.ReciptCode)
+                    @Html.ValidationMessageFor(m => m.ReciptCode, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.ReciptCode, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(m => m.ReciptionType)
+                    @Html.ValidationMessageFor(m => m.ReciptionType, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.ReciptionType, new { @class = "col-md-2 control-label" })
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.TrackingCode)
+                    @Html.ValidationMessageFor(m => m.TrackingCode, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.TrackingCode, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.ReciptTime)
+                    @Html.ValidationMessageFor(m => m.ReciptTime, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.ReciptTime, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-sm-10">
+                    <input type="file" class="styled" name="InputFile" id="InputFile">
+                </div>
+                @Html.LabelFor(m => m.ReciptImage, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+                <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'AddReciept')" data-loading-text="در حال ارسال اطلاعات" class="btn-block pull-left">
+                    ثبت  محتوا
+                </button>
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+            warningBeforeLoad();
+        })
+    </script>
+}

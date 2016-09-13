@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+
+@if (Model != null)
+{
+
+    <div class="light-wrapper">
+        <div class="container inner">
+            <div class="section-title-wrapper">
+                <h3 class="section-title">از وبلاگ ما</h3>
+            </div>
+            <div class="owl-blog owlcarousel carousel-th">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <figure>
+                            <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">
+                                <div class="text-overlay">
+                                    <div class="info">بیشتر بخوانید</div>
+                                </div>
+                                <img src="~/Uploads/SiteMedia/Post/@item.PostImage" alt="" />
+                            </a>
+                        </figure>
+                        <div class="image-caption">
+                            <div class="date-wrapper">
+                                <div class="day">12</div>
+                                <div class="month">تیر</div>
+                            </div>
+                            <h4 class="post-title"><a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">@Html.DisplayFor(a => item.Title)</a></h4>
+                            <div class="meta"> <span class="categories"><a href="#">@Html.DisplayFor(a => item.BlogName)</a></span> <span class="comments"><a href="#">@Html.DisplayFor(a => item.CommentCount) نظر</a></span> </div>
+                            <p>@Html.Raw(item.Summary)</p>
+                        </div>
+                    </div>
+                }
+
+                <!-- /.item -->
+            </div>
+            <!-- /.owlcarousel -->
+        </div>
+    </div>
+
+}

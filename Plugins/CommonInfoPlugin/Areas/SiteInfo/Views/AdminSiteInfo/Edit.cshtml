@@ -1,0 +1,170 @@
+﻿@model AradCms.Core.ViewModel.Site.AddOrUpdateSiteInfo
+@{
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm(InfMVC.SiteInfo.AdminSiteInfo.ActionNames.Edit, InfMVC.SiteInfo.AdminSiteInfo.Name, new { area = InfMVC.SiteInfo.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editpost", enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default">
+        <div class="panel-heading"><h6 class="panel-title"><i class="icon-point-up"></i> اطلاعات وبسایت</h6></div>
+        <div class="panel-body">
+            <div class="alert alert-success fade in block-inner">
+                <button type="button" class="close right" data-dismiss="alert">×</button>
+                اطلاعات عمومی وبسایت در اینجا تنظیم میشود
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <!-- Default pills -->
+                    <span class="subtitle right">اطلاعات عمومی</span>
+                    <div class="well block">
+                        <div class="tabbable">
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#default-pill1" data-toggle="tab">نام وبسایت</a></li>
+                                <li><a href="#default-pill2" data-toggle="tab">درباره ما</a></li>
+                                <li><a href="#default-pill3" data-toggle="tab">تماس با ما</a></li>
+                                <li><a href="#default-pill4" data-toggle="tab">اطلاعات نقشه</a></li>
+                                <li><a href="#default-pill5" data-toggle="tab">عکس وبسایت</a></li>
+                            </ul>
+                            <div class="tab-content pill-content">
+                                <div class="tab-pane fade in active" id="default-pill1">
+                                    <div class="form-horizontal" role="form" action="#">
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.SiteName, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.SiteName, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.SiteName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.SiteAddress, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.SiteAddress, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.SiteAddress, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.SitePhone, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.SitePhone, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.SitePhone, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.EmailUsername, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.EmailUsername, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.EmailUsername, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.EmailPassword, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.EmailPassword, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.EmailPassword, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.Smtpserver, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.Smtpserver, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.Smtpserver, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="default-pill2">
+                                    <div class="form-horizontal" role="form" action="#">
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.SiteAboute, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextAreaFor(m => m.SiteAboute, new { style = "height:300px" })
+                                                @Html.ValidationMessageFor(m => m.SiteAboute, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="default-pill3">
+                                    <div class="form-horizontal" role="form" action="#">
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.SiteContact, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextAreaFor(m => m.SiteContact, new { style = "height:300px" })
+                                                @Html.ValidationMessageFor(m => m.SiteContact, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="default-pill4">
+                                    <div class="form-horizontal" role="form" action="#">
+                                        <div class="form-group">
+                                            @Html.LabelFor(a => Model.GooglemapCode, new { @class = "col-sm-2 control-label" })
+
+                                            <div class="col-sm-10">
+                                                @Html.TextBoxFor(m => m.GooglemapCode, new { @class = "form-control", @placeholder = "placeholder" })
+                                                @Html.ValidationMessageFor(m => m.GooglemapCode, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="default-pill5">
+                                    <div class="form-horizontal" role="form" action="#">
+                                        <div class="form-group">
+                                            <label for="InputFile" class="col-md-2 control-label text-right">بارگذاری عکس</label>
+                                            <div class="col-md-10">
+                                                <input type="file" class="styled" name="InputFile" id="InputFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /default pills -->
+                </div>
+            </div>
+            <div class="form-actions text-right">
+                <input type="submit" value="ثبت اطلاعات" class="btn btn-primary pull-left">
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckeditor/config.js"></script>
+    <script>
+        var roxyFileman = '../../../Scripts/RoxyFileManager/index.html';
+        $(function () {
+            if (CKEDITOR.instances['SiteAboute']) {
+                CKEDITOR.remove(CKEDITOR.instances['SiteAboute']);
+            }
+
+            CKEDITOR.replace('SiteAboute', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+            CKEDITOR.replace('SiteContact', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+
+        });
+    </script>
+
+}

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Links.Content.bootstrap_min_css" />
+    <link rel="stylesheet" href="@Links.Content.error.normalize_css"/>
+    <link rel="stylesheet" href="@Links.Content.error.style_css" />
+    <link rel="stylesheet" href="@Links.Content.error.responsive_css" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="four_zero_warapper_area column">
+        @RenderBody()
+    </div>
+    <!-- end 404 content -->
+    <!-- 404 mainmenu -->
+    @Html.Partial(MVC.Themes.Views.Error._ZoneNav)
+    <!-- end 404 mainmenu -->
+    <!-- 404 social icon area-->
+    <div class="socail-icon_area">
+        <div class="socail-icon column">
+            <ul>
+                <a href="#"><li class="facebook">facebook</li></a>
+                <a href="#"><li class="twitter">twitter</li></a>
+                <a href="#"><li class="google-plus">google-plus</li></a>
+                <a href="#"><li class="vimeo">vimeo</li></a>
+                <a href="#"><li class="pinterest">pinterest</li></a>
+                <a href="#"><li class="pacasa">pacasa</li></a>
+                <a href="#"><li class="wordpress">wordpress</li></a>
+                <a href="#"><li class="feed">feed</li></a>
+                <a href="#"><li class="dropbox">dropbox</li></a>
+            </ul>
+        </div>
+    </div>
+    <!-- end 404 social icon area-->
+    @Scripts.Render("~/bundles/jquery")
+    
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

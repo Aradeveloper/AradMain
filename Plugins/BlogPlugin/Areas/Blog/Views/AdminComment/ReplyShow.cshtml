@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BlogPlugin.Models.PostComment>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <div class="form-actions no-color">
+        <span style="font-weight:bold;color:darkorange;">@Html.ConvertToPersianDateTime(item.CreatedOn)</span>
+        <br />
+        <span>@Html.DisplayFor(a => item.Body)</span>
+        <br />
+        <div style="direction:ltr;">
+            @using (Html.BeginForm(BMVC.Blog.AdminComment.ActionNames.DeleteConfirmed, BMVC.Blog.AdminComment.Name, new { id = item.Id }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="حذف" class="btn btn-default left" />
+            }
+        </div>
+    </div>
+}

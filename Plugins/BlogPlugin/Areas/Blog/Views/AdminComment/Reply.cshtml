@@ -1,0 +1,28 @@
+﻿@model BlogPlugin.ViewModel.AddUserCommentModel
+@{
+    Layout = null;
+}
+<center>
+    @*@using (Ajax.BeginForm(BMVC.Blog.AdminComment.ActionNames.Reply, BMVC.Blog.AdminComment.Name, FormMethod.Post, new AjaxOptions { UpdateTargetId = "CategoryList", InsertionMode = InsertionMode.Replace, HttpMethod = "POST", OnComplete = "hideLoading", OnSuccess = "success" }))*@
+    @using (Html.BeginForm(BMVC.Blog.AdminComment.ActionNames.Reply, BMVC.Blog.AdminComment.Name, new { area = BMVC.Blog.Name }, FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+        <div class='row'>
+            <div>
+                <div class='box-title' style="margin-bottom:1%">
+                    <h3>نظر شما چیست؟</h3>
+                </div>
+                <div class='comments-form'>
+                    <div action="#">
+                        @Html.TextAreaFor(model => model.Body, new { @class = "span8 comment-input", @placeholder = "پیام شما ... ", @id = "message", @name = "message", @rows = "10", style = "height:90px;width:450px" })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                    <div style="direction:ltr;text-align:left">
+                        <input type="submit" name="postComment" value='ارسال بفرمایید' class='btn btn-custom btn-red btn-medium btn-large-text' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</center>

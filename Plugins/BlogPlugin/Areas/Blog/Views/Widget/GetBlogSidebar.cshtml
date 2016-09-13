@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTableBlog>
+<div class="sidebox widget">
+    @if (Model != null)
+    {
+        <h3 class="widget-title">دسته بندی ها</h3>
+        <ul class="circled">
+            @foreach (var item in Model)
+            {
+                <li><a href="@Url.Action(BMVC.Blog.Widget.ActionNames.GetList,BMVC.Blog.Widget.Name,new {id=item.Id,area= BMVC.Blog.Name })">@Html.DisplayFor(a => item.Name)-(@Html.ConvertToPersianString(item.PostCount))</a></li>
+            }
+        </ul>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model AradCms.Core.ViewModel.Site.AddOrUpdateSiteInfo
+@{
+    ViewBag.Title = "تماس با ما";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="light-wrapper">
+    <div class="container inner">
+        <div class="map">
+            <iframe src="@Model.GooglemapCode" width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen></iframe>
+        </div>
+        <div class="divide50"></div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h1 class="post-title">درباره ما</h1>
+                <p>@Html.Raw(Model.SiteContact)</p>
+                <div class="divide20"></div>
+                @Html.Action(InfMVC.SiteInfo.Widget.ActionNames.Contact, InfMVC.SiteInfo.Widget.Name)
+                <!-- /.form-container -->
+            </div>
+            <!-- /.col -->
+            <aside class="col-sm-4 sidebar lp20">
+                <div class="sidebox widget">
+                    <h3>آدرس</h3>
+                    <p>راه های تماس با ما به شرح زیر می باشد.</p>
+                    <address>
+                        <p>@Html.DisplayFor(a => Model.SiteAddress)</p>
+                        <abbr title="Phone">P:</abbr> @Html.DisplayFor(a => Model.SitePhone) <br>
+                        <abbr title="Email">E:</abbr> <a href="mailto:#">Info@aradeveloper.ir</a>
+                    </address>
+                </div>
+                <!-- /.widget -->
+            </aside>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

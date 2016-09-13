@@ -1,0 +1,96 @@
+﻿@model FormPlugin.ViewModel.AddOrUpdateOrderForm
+@{
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+    ViewBag.Title = "فرم سفارش محصول";
+
+}
+<!-- Right labels -->
+@using (Html.BeginForm(FoMVC.FormPlug.Widget.ActionNames.CreateOrder, FoMVC.FormPlug.Widget.Name, new { area = FoMVC.FormPlug.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "addOrder", enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default ">
+        <div class="panel-heading ">
+            <strong>سفارش دهید</strong>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Phone)
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                </div>
+                <span>@Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })</span>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Email)
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Website)
+                    @Html.ValidationMessageFor(m => m.Website, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Website, new { @class = "col-md-2 control-label" })
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Company)
+                    @Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Company, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Address)
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.NoAutoCompleteTextBoxFor(m => m.Subject)
+                    @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger commenttext" })
+                </div>
+                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+            </div>
+            <div class="form-group">
+                <span>@Html.LabelFor(m => m.Description, new { @class = "labeltext" })</span>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Description, new { @class = "commentfullText", style = "height:300px" })
+                    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'addOrder')" data-loading-text="در حال ارسال اطلاعات" class="btn-block pull-left">
+                    ثبت  محتوا
+                </button>
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+            warningBeforeLoad();
+        })
+    </script>
+}

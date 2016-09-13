@@ -1,0 +1,54 @@
+﻿<ul class="navigation">
+    <li><a href="@Url.Action("Index", "Default", new { area = "Administration" })"><span>داشبورد مدیریت</span> <i class="icon-screen2"></i></a></li>
+    <li>
+        <a href="#"><span>مدیرت دسترسی ها</span> <i class="icon-paragraph-justify2"></i></a>
+        <ul>
+            <li><a href="@Url.Action("List", "Role",new { area="Administration"})">مدیریت نقش ها</a></li>
+            <li><a href="@Url.Action("List", "User",new { area="Administration"})">مدیریت کاربران</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><span>تنظیمات وبسایت</span> <i class="icon-grid"></i></a>
+        <ul>
+            @{ Html.RenderPartial(MVC.Themes.Views.Admin._PluginsMenu); }
+        </ul>
+    </li>
+    <li>
+        <a href="#"><span>Layouts</span> <i class="icon-copy"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><span>Task manager</span> <i class="icon-numbered-list"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li><a href="charts.html"><span>Charts</span> <i class="icon-bars"></i></a></li>
+    <li>
+        <a href="#"><span>User</span> <i class="icon-user"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><span>Support</span> <i class="icon-bubble6"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#"><span>Tables</span> <i class="icon-table2"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li><a href="#"><span>Search page</span> <i class="icon-search3"></i></a></li>
+    <li>
+        <a href="#"><span>Invoice</span> <i class="icon-coin"></i></a>
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+</ul>

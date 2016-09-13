@@ -1,0 +1,18 @@
+﻿@model BlogPlugin.Models.PostComment
+@{
+    Layout = null;
+}
+@using (Html.BeginForm(BMVC.Blog.AdminComment.ActionNames.DeleteConfirmed, BMVC.Blog.AdminComment.Name))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <span style="font-weight:bold;color:darkorange;">آیا از حذف این محتوا مطمئنید ؟</span>
+        <br />
+        <span>در صورت حذف محتوا تمامی اطلاعات مرتبط با آن حذف خواهد شد</span>
+        <br />
+        <div style="direction:ltr;">
+            <input type="submit" value="حذف" class="btn btn-default left" />
+        </div>
+    </div>
+}

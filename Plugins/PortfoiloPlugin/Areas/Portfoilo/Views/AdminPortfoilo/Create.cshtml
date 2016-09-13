@@ -1,0 +1,97 @@
+﻿@model PortfoiloPlugin.ViewModel.AddOrUpdatePortfoilo
+@{
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+
+}
+<!-- Right labels -->
+@using (Html.BeginForm(PoMVC.Portfoilo.AdminPortfoilo.ActionNames.Create, PoMVC.Portfoilo.AdminPortfoilo.Name, new { area = PoMVC.Portfoilo.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "addblog", enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h6 class="panel-title"><i class="icon-paragraph-right2"></i> ایجاد نمونه کار</h6></div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    @Html.LabelFor(a => a.Title, new { @class = "col-sm-2 control-label text-right" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(a => a.Title, new { @class = "form-control", @placeholder = "placeholder" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(a => a.Slug, new { @class = "col-sm-2 control-label text-right" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(a => a.Slug, new { @class = "form-control", @placeholder = "placeholder" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Summary, new { @class = "col-md-2 control-label text-right" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(m => m.Summary, new { style = "height:300px" })
+                        @Html.ValidationMessageFor(m => m.Summary, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Body, new { @class = "col-md-2 control-label text-right" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(m => m.Body, new { style = "height:300px" })
+                        @Html.ValidationMessageFor(m => m.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label class="checkbox-inline pull-right">
+                        @Html.CheckBoxFor(a => a.Published, new { @class = "switch switch-large", @type = "checkbox" })
+                        @Html.LabelFor(a => a.Published)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="InputFile" class="col-md-2 control-label text-right">بارگذاری عکس</label>
+                    <div class="col-md-10">
+                        <input type="file" class="styled" name="InputFile" id="InputFile">
+                    </div>
+                </div>
+
+                <div class="form-actions text-right">
+                    <input type="submit" value="ثبت اطلاعات" class="btn btn-primary pull-left">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- /right labels -->
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @*<script>
+            $(function () {
+                warningBeforeLoad();
+            })
+        </script>*@
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckeditor/config.js"></script>
+    <script>
+        var roxyFileman = '../../../Scripts/RoxyFileManager/index.html';
+        $(function () {
+            if (CKEDITOR.instances['Body']) {
+                CKEDITOR.remove(CKEDITOR.instances['Body']);
+            }
+
+            CKEDITOR.replace('Body', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+            CKEDITOR.replace('Summary', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+
+        });
+    </script>
+
+}

@@ -1,0 +1,19 @@
+﻿@using AradCms.Core.IOC
+@using AradCms.Core.Plugin
+
+@{
+    var plugins = ProjectObjectFactory.Container.GetAllInstances<IPlugin>().ToList();
+}
+@foreach (var plugin in plugins)
+{
+    foreach (var item in plugin.GetMenuItem(this.Request.RequestContext))
+    {
+        if (!item.IsAuthorize && item.IsWidget && item.WidgetZoneName == "ZoneNewsList")
+        {
+
+            @Html.Action(item.Action, item.Controller, new { area = item.Area })
+
+        }
+    }
+
+}

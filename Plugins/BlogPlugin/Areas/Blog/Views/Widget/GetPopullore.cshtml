@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+@if (Model != null)
+{
+    <div class="sidebox widget">
+        <h3 class="widget-title">
+            پر بازدیدترین مطالب
+        </h3>
+        <ul class="post-list">
+            @foreach (var item in Model)
+                {
+                <li>
+                    <div class="icon-overlay"> <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })"><img src="~/Uploads/SiteMedia/Post/@item.PostImage" alt="" /> </a> </div>
+                    <div class="meta">
+                        <h6>
+                            <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes,BMVC.Blog.Widget.Name,new { Id=item.Id,area= BMVC.Blog.Name})">
+                                @Html.DisplayFor(a => item.Title)
+                            </a>
+                        </h6>
+                        <em>@Html.ConvertToPersianDateTime(item.Timestamp)</em>
+                    </div>
+                </li>
+            }
+        </ul>
+        <!-- /.post-list -->
+    </div>
+}

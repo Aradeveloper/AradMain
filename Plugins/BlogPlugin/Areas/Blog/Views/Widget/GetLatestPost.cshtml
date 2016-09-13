@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <ul>
+            <li>
+                <p>@Html.DisplayFor(a => item.Title)</p>
+                <p>@Html.Raw(item.Summary)</p>
+            </li>
+        </ul>
+    }
+}

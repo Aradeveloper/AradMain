@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="webdesigndl.com">
+    <link rel="shortcut icon" href="@Links.Content.Loom.images.favicon_png">
+    <title>@ViewBag.Title - @Html.Partial(MVC.Shared.Views._SiteName)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @Html.Partial(MVC.Shared.Views._Opengraph)
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+    <div class="body-wrapper">
+        @Html.Partial(MVC.Shared.Views._ZoneNav)
+
+        <!-- /.process -->
+        <div class="offset"></div>
+
+        <div class="light-wrapper">
+            <div class="container inner">
+                <div class="row">
+                    <br />
+                    <br />
+                    @RenderBody()
+                    <aside class="col-sm-4 sidebar lp30">
+                        <div class="sidebox widget">
+                            <form class="searchform" method="get">
+                                <input type="text" id="s2" name="s" value="جستجو" onfocus="this.value=''" onblur="this.value='Search something'" />
+                                <button type="submit" class="btn btn-default">پیدا کردن</button>
+                            </form>
+                        </div>
+                        <!-- /.widget -->
+                        @Html.Partial(MVC.Shared.Views._ZoneSideWidget)
+                        <!-- /.widget -->
+                        <div class="sidebox widget">
+                            <h3 class="widget-title">
+                                صفحات اجتماعی ما
+                            </h3>
+                            <p>ما را در شبکه های اجتماعی همراهی کنید</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/ARADeveloper.ir" target="_blank"><i class="icon-s-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/aradeveloper/" target="_blank"><i class="icon-s-instagrem"></i></a></li>
+                                <li><a href="https://telegram.me/Aradeveloper" target="_blank"><i class="icon-s-skype"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- /.widget -->
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        @Html.Partial(MVC.Shared.Views._ZoneFooter)
+    </div>
+    <!-- /.body-wrapper -->
+    @Html.Partial(MVC.Shared.Views._ZoneContact)
+    @Html.Partial(MVC.Shared.Views._ZoneSocialSidebar)
+    <!-- /canvas -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/AradScript")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

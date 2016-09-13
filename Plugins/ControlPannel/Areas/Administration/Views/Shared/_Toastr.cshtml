@@ -1,0 +1,7 @@
+﻿@using AradCms.Core.Controllers.Alerts
+@using ControlPannel.Areas.Administration.Views.RazorHelpers;
+@if (TempData.ContainsKey(ToastMessage.TempDataKey))
+{
+    var toastr = TempData[ToastMessage.TempDataKey] as Toastr;
+    @ToastrBuilder.ShowToastMessages(toastr);
+}

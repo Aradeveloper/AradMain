@@ -1,0 +1,91 @@
+﻿@using AradCms.Core.Helpers
+@using ControlPannel.Areas.Administration.Views.RazorHelpers;
+@model AradCms.Core.ViewModel.Role.EditRoleViewModel
+@{
+    ViewBag.Title = "ویرایش گروه کاربری کاربری";
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @using (Html.BeginForm(PaMVC.Administration.Role.ActionNames.Delete, PaMVC.Administration.Role.Name, new { area = PaMVC.Administration.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplate = "off", id = "deleteRoleForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(a => a.Id)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'deleteRoleForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-danger btn-sm">
+                                حذف گروه کاربری
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm(PaMVC.Administration.Role.ActionNames.Edit, PaMVC.Administration.Role.Name, new { area = PaMVC.Administration.Name }, FormMethod.Post, new { role = "form", @class = "form-horizontal", autocomplete = "off", id = "editRoleForm" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(a => a.Id)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>مشخصات گروه</strong>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.LabelFor(a => a.Name, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.NoAutoCompleteTextBoxFor(a => a.Name)
+                            @Html.ValidationMessageFor(a => a.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(a => a.Description, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.NoAutoCompleteTextBoxFor(a => a.Description)
+                            @Html.ValidationMessageFor(a => a.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-2">
+                            @Html.CheckBoxFor(a => a.IsActive, new { @class = "checkbox-inline" })
+                            @Html.LabelFor(a => a.IsActive, new { @class = "control-label" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.CheckBoxFor(a => a.IsDefaultForRegister, new { @class = "checkbox-inline", @disabled = "disabled" })
+                            @Html.LabelFor(a => a.IsDefaultForRegister, new { @class = "control-label" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.CheckBoxFor(a => a.IsSystemRole, new { @class = "checkbox-inline", @disabled = "disabled" })
+                            @Html.LabelFor(a => a.IsSystemRole, new { @class = "control-label" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>دسترسی ها</strong>
+                </div>
+                <div class="panel-body">
+                    @CheckBoxListBuilder.CheckBoxList("PermissionIds", ViewBag.Permissions)
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" autocomplete="off" onclick="AjaxForm.CustomSubmit(this, 'editRoleForm')" data-loading-text="در حال ارسال اطلاعات" class="btn btn-success btn-block">
+                                ذخیره تغییرات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

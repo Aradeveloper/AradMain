@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "صفحه نخست";
+    //ViewBag.Url = HttpContext.Current.Request.Url.AbsoluteUri; // this could be placed in layout I guess
+    ViewBag.Image = "http://" + HttpContext.Current.Request.Url.Host + "/Uploads/SiteMedia/Site/software-developer-vs-software-engineer.jpg";
+    ViewBag.Description = "وبسایت شرکت ارتباط گستر آراد هیرکان";
+}
+<div class="container-full">
+    @Html.Partial(MVC.Shared.Views._ZoneSlider)
+    <!-- /.banner-container -->
+    <!-- /.owlcarousel -->
+</div>
+<div class="light-wrapper ">
+    
+    <div class="container inner" >
+        @Html.Partial(MVC.Shared.Views._ZoneNewsList)
+        @Html.Partial(MVC.Shared.Views._ZonePortfoilo)
+    </div>
+</div>
+@Html.Partial(MVC.Shared.Views._ZoneCoworkers)
+<!-- /.testimonials -->
+@Html.Partial(MVC.Shared.Views._ZoneAboutCompany)
+<!-- /.dark-wrapper -->
+@Html.Partial(MVC.Shared.Views._ZoneBlogList)
+<!--/Weblog-->
+@Html.Partial(MVC.Shared.Views._ZoneProcess)

@@ -1,0 +1,12 @@
+﻿@model FormPlugin.ViewModel.TrakCodeViewModel
+@{
+    ViewBag.Title = "کد پیگیری";
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">کد پیگیری سفارش خود را جهت مراجعه های بعدی نگه دایرد.</div>
+    <div class="panel-body">
+        <p>@Html.DisplayFor(a => Model.TrakCode, new { @class = "" })</p>
+    </div>
+    <div class="panel-footer">از سفارش شما متشکریم</div>
+</div>

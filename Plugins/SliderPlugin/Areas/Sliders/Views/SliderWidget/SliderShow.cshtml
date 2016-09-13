@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SliderPlugin.ViewModel.AddOrUpdate>
+@if (Model != null)
+{
+   
+   
+    <div class="banner-container revolution">
+        <div class="banner">
+            <ul>
+                @foreach (var item in Model)
+                {
+
+                    <li data-transition="fade">
+                        <img src="~/Uploads/SiteMedia/Slider/@item.ImagePath" style="background-color: #65676e;" alt="" />
+                        <div class="caption sfb upper white-bg " data-x="850" data-y="120" data-speed="900" data-start="800" data-easing="Sine.easeOut">
+                            @Html.DisplayFor(a => item.TitleOne)
+                        </div>
+                        <div class="caption sfb lower white-bg "data-x="850"  data-y="180" data-speed="900" data-start="1300" data-easing="Sine.easeOut">@Html.DisplayFor(a => item.TitleTwo)</div>
+                        <div class="caption sfb lower white-bg " data-x="850" data-y="240" data-speed="900" data-start="1800" data-easing="Sine.easeOut">@Html.DisplayFor(a => item.TitleThree)</div>
+                    </li>
+
+                }
+            </ul>
+            <div class="tp-bannertimer tp-bottom"></div>
+        </div>
+        <!-- /.banner -->
+    </div>
+
+}

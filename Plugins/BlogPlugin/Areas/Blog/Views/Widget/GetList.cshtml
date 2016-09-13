@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+@{
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+@if (Model != null)
+{
+
+    <div class="col-sm-8 content">
+        <div class="grid-blog col2">
+            @foreach (var item in Model)
+            {
+                <div class="post">
+                    <figure>
+                        <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">
+                            <div class="text-overlay">
+                                <div class="info">
+                                    ادامه مطلب
+                                </div>
+                            </div>
+                            <img src="~/Uploads/SiteMedia/Post/@item.PostImage" alt="" />
+                        </a>
+                    </figure>
+                    <div class="image-caption">
+                        <div class="date-wrapper">
+                            <div class="day">@Html.ConvertToPersianDateTime(item.Timestamp)</div>
+                        </div>
+                        <h4 class="post-title">
+                            <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">
+                                @Html.DisplayFor(a => item.Title)
+                            </a>
+                        </h4>
+                        <div class="meta">
+                            <span class="categories"><a href="#">@Html.DisplayFor(a => item.BlogName)</a></span> <span class="comments">
+                                <a href="#">
+                                    @Html.DisplayFor(a => item.CommentCount) نظر
+                                </a>
+                            </span>
+                        </div>
+                        <p>@Html.Raw(item.Summary)</p>
+                        <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })" class="more">
+                            ادامه مطلب
+                            →
+                        </a>
+                    </div>
+                </div>
+            <!-- /.post -->
+                <hr />
+            }
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">قبل</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">بعد</a></li>
+            </ul>
+        </div>
+        <!-- /.pagination -->
+    </div>
+}

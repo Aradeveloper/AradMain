@@ -1,0 +1,73 @@
+﻿@model BlogPlugin.ViewModel.PostDetail
+
+@{
+    ViewBag.Title = Model.Title;
+
+    ViewBag.Image = "http://" + HttpContext.Current.Request.Url.Host + "/Uploads/SiteMedia/Post/" + @Model.ImagePath;
+    ViewBag.Description = Html.Raw(Model.Summary);
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+<div class="col-sm-8 content">
+    <div class="classic-blog">
+        <div class="post format-image">
+            <figure><img src="~/Uploads/SiteMedia/Post/@Model.ImagePath" alt="" /></figure>
+            <div class="post-content image-caption">
+                <h2 class="post-title">@Html.DisplayFor(a => Model.Title)</h2>
+                <div class="meta">
+                    <span class="date">
+                        نوشته شده در تاریخ
+                        <a href="#">@Html.ConvertToPersianDateTime(Model.CreateTime)</a>
+                    </span>
+
+                    <span class="category">
+                        <a href="#">@Html.DisplayFor(a => Model.BlogName)</a>
+                    </span>
+
+                    <span class="comments"><a href="#">@Html.ConvertToPersianString(Model.VisitCount) بازدید</a></span>
+                </div>
+                <!-- /.meta -->
+
+                @Html.Raw(Model.Body)
+                <div class="meta tags">
+                    @foreach (var item in Model.Tags)
+                    {
+                        <a href="#">
+                            @Html.DisplayFor(a => item.Name)
+                        </a><span>,</span>
+                    }
+                </div>
+                <div class="divide10"></div>
+                <div class="share"> <a href="#" class="btn share-facebook">Like</a> <a href="#" class="btn share-twitter">Tweet</a> <a href="#" class="btn share-googleplus">+1</a> <a href="#" class="btn share-pinterest">Pin It</a> </div>
+            </div>
+            <!-- /.post-content image-caption -->
+        </div>
+        <!-- /.post .format-image -->
+        <hr />
+    </div>
+    <div class="about-author image-caption">
+        <div class="author-image"> <img alt="" src="style/images/art/author.jpg" /> </div>
+        <div class="author-details">
+            <h3>
+                درباره نویسنده
+            </h3>
+            <p>تیم طراحی آراد</p>
+            <ul class="social">
+                <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+                <li><a href="#"><i class="icon-s-pinterest"></i></a></li>
+                <li><a href="#"><i class="icon-s-dribbble"></i></a></li>
+                <li><a href="#"><i class="icon-s-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <hr />
+    @if (Model.CommentStatuse)
+    {
+            @Html.Action(BMVC.Blog.Widget.ActionNames.GetComments, BMVC.Blog.Widget.Name, new { id = Model.Id })
+    }
+    <!-- /#comments -->
+    <hr />
+    @Html.Action(BMVC.Blog.Widget.ActionNames.AddComent, BMVC.Blog.Widget.Name, new { id = Model.Id })
+    <!-- /.comment-form-wrapper -->
+</div>

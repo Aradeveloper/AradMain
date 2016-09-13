@@ -1,0 +1,35 @@
+﻿@model AradCms.Core.ViewModel.Site.EmailForm
+<div class="form-container">
+    <div class="response alert alert-success"></div>
+    @using (Html.BeginForm(InfMVC.SiteInfo.Widget.ActionNames.SendMail, InfMVC.SiteInfo.Widget.Name, new { area = InfMVC.SiteInfo.Name }, FormMethod.Post, new { role = "form", @class = "forms", autocomplete = "off", id = "editpost", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            <ol>
+                <li class="form-row text-input-row name-field">
+
+                    @Html.EditorFor(model => model.FromName, new { htmlAttributes = new { @id = "name", @name = "name", @class = "text-input defaultText required", @placeholder = "نام خود را وارد نمایید" } })
+                    @Html.ValidationMessageFor(model => model.FromName, "", new { @class = "text-danger" })
+                </li>
+                <li class="form-row text-input-row email-field">
+                    @Html.EditorFor(model => model.FromEmail, new { htmlAttributes = new { @id = "email", @name = "email", @class = "text-input defaultText required email", @placeholder = "ایمیل خود را وارد نمایید" } })
+                    @Html.ValidationMessageFor(model => model.FromEmail, "", new { @class = "text-danger" })
+                </li>
+                <li class="form-row text-input-row subject-field">
+                    @Html.EditorFor(model => model.SubjectEmail, new { htmlAttributes = new { @id = "subject", @name = "subject", @class = "text-input defaultText", @placeholder = "موضوع پیام خود را وارد نمایید" } })
+                    @Html.ValidationMessageFor(model => model.SubjectEmail, "", new { @class = "text-danger" })
+                </li>
+                <li class="form-row text-area-row">
+                    @Html.TextAreaFor(model => model.Message, new { @id = "message", @name = "message", @class = "text-area required", @cols = "30", @rows = "10", @placeholder = "متن خود را وارد نمایید" })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                </li>
+
+                <li class="button-row">
+                    <input type="submit" value="ارسال" name="submit" class="btn btn-submit bm0 left" />
+                </li>
+            </ol>
+        </fieldset>
+
+    }
+</div>

@@ -1,0 +1,104 @@
+﻿@using AradCms.Core.IOC
+@using AradCms.Core.Plugin
+
+@{
+    var plugins = ProjectObjectFactory.Container.GetAllInstances<IPlugin>().ToList();
+}
+<div class="dark-wrapper">
+    <div class="container inner">
+        <div class="text-center">
+            <p class="lead lite"><a href="@Url.Action("Contactus","Widget",new { area="SiteInfo"})">برای شروع همکاری کلیک کنید</a></p>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container inner">
+        <div class="row">
+            @foreach (var plugin in plugins)
+            {
+                foreach (var item in plugin.GetMenuItem(this.Request.RequestContext))
+                {
+                    if (!item.IsAuthorize && item.IsWidget && item.WidgetZoneName == "FooterAboute")
+                    {
+
+                        @Html.Action(item.Action, item.Controller, new { area = item.Area })
+
+                    }
+                }
+
+            }
+            <!-- /col -->
+            @foreach (var plugin2 in plugins)
+            {
+                foreach (var item2 in plugin2.GetMenuItem(this.Request.RequestContext))
+                {
+                    if (!item2.IsAuthorize && item2.IsWidget && item2.WidgetZoneName == "GetFooterNews")
+                    {
+
+                        @Html.Action(item2.Action, item2.Controller, new { area = item2.Area })
+
+                    }
+                }
+
+            }
+            <!-- /col -->
+
+            @foreach (var plugin3 in plugins)
+            {
+                foreach (var item3 in plugin3.GetMenuItem(this.Request.RequestContext))
+                {
+                    if (!item3.IsAuthorize && item3.IsWidget && item3.WidgetZoneName == "ContactFooter")
+                    {
+
+                        @Html.Action(item3.Action, item3.Controller, new { area = item3.Area })
+
+                    }
+                }
+
+            }
+            <!-- /col -->
+
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h3 class="widget-title upper">خبرنامه</h3>
+                    <p>با عضویت در خبرنامه بروز باشید</p>
+                    <div class="divide10"></div>
+                    <div class="newsletter-wrapper">
+                        <div id="mc_embed_signup">
+                            <div  id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="ایمیل را وارد کنید" required>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_ddc180777a163e0f9f66ee014_056957de28" value="">
+                                </div>
+                                <div class="clear">
+                                    <input type="submit" value="پیوستن" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.newsletter-wrapper -->
+                </div>
+                <!-- /.widget -->
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- .container -->
+
+    <div class="sub-footer">
+        <div class="container">
+            <p class="pull-left">
+                کپی رایت 2016 تمام حقوق مادی و معنوی این سایت متعلق به شرکت  <a href="http://www.aradeveloper.ir">ارتباط گستر آراد هیرکان</a> می باشد.
+            </p>
+            <ul class="footer-menu pull-right">
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">نمونه کار</a></li>
+                <li><a href="#">وبلاگ</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

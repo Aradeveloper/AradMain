@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DB739D2-65FE-4DA8-84D3-4F987398F708}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlPannel</RootNamespace>
+    <AssemblyName>ControlPannel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mvc.Mailer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Postal.Mvc5.1.2.0\lib\net45\Postal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\..\packages\RazorEngine.3.9.0\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\RazorGenerator.Mvc.2.4.7\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=4.3.0.449, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\StructureMap.4.4.0\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\T4MVCExtensions.3.17.5\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration.AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.DefaultController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.EditorTemplatesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.EmailsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.RazorHelpersController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.RoleController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.UserMailerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\PanelPlugin.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Administration\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Administration\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UserController.cs" />
+    <Compile Include="Areas\Administration\Views\Account\ForgotPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ReceiveActivatorEmail1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiveActivatorEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\EditorTemplates\PersianDatePicker.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersianDatePicker.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\RazorHelpers\BootstrapBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BootstrapBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\RazorHelpers\CheckBoxListBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckBoxListBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\RazorHelpers\ToastrBuilder.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToastrBuilder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\User\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Areas\Administration\Views\Account\AdminMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ChangePassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ConfirmEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ExternalLoginConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ExternalLoginFailure.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginFailure.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ForgotPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\Login.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\Register.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ResetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\ResetPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Account\_ExternalLoginsListPartial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ExternalLoginsListPartial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Default\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Emails\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Role\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Role\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Role\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Role\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\Shared\_Toastr.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Toastr.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\UserMailer\ConfirmAccount.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmAccount.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\UserMailer\ResetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\UserMailer\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\User\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\User\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\User\_ListAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Administration\Views\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\icons.css" />
+    <EmbeddedResource Include="Content\bootstrap.min.css" />
+    <EmbeddedResource Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\colorpicker\alpha.png" />
+    <Content Include="Content\images\colorpicker\hue.png" />
+    <Content Include="Content\images\colorpicker\saturation.png" />
+    <Content Include="Content\images\flags\english.png" />
+    <Content Include="Content\images\flags\german.png" />
+    <Content Include="Content\images\flags\hungarian.png" />
+    <Content Include="Content\images\flags\spanish.png" />
+    <Content Include="Content\images\flags\ukrainian.png" />
+    <Content Include="Content\images\forms\add_files.png" />
+    <Content Include="Content\images\forms\check.png" />
+    <Content Include="Content\images\forms\checkbox.png" />
+    <Content Include="Content\images\forms\checkbox_blue.png" />
+    <Content Include="Content\images\forms\checkbox_dark.png" />
+    <Content Include="Content\images\forms\checkbox_green.png" />
+    <Content Include="Content\images\forms\checkbox_red.png" />
+    <Content Include="Content\images\forms\check_white.png" />
+    <Content Include="Content\images\forms\choice.png" />
+    <Content Include="Content\images\forms\choice_white.png" />
+    <Content Include="Content\images\forms\clear_results.png" />
+    <Content Include="Content\images\forms\dropdown_arrow_down.png" />
+    <Content Include="Content\images\forms\dropdown_arrow_up.png" />
+    <Content Include="Content\images\forms\radio.png" />
+    <Content Include="Content\images\forms\radio_blue.png" />
+    <Content Include="Content\images\forms\radio_dark.png" />
+    <Content Include="Content\images\forms\radio_green.png" />
+    <Content Include="Content\images\forms\radio_red.png" />
+    <Content Include="Content\images\forms\select_multiple_add.png" />
+    <Content Include="Content\images\forms\spinner_bottom.png" />
+    <Content Include="Content\images\forms\spinner_top.png" />
+    <Content Include="Content\images\forms\switch_handler.png" />
+    <Content Include="Content\images\interface\arrow_left.png" />
+    <Content Include="Content\images\interface\arrow_right.png" />
+    <Content Include="Content\images\interface\breadcrumb_home.png" />
+    <Content Include="Content\images\interface\datepicker_trigger.png" />
+    <Content Include="Content\images\interface\filter.png" />
+    <Content Include="Content\images\interface\lightbox_overlay.png" />
+    <Content Include="Content\images\interface\loader.gif" />
+    <Content Include="Content\images\interface\minus.png" />
+    <Content Include="Content\images\interface\nav_arrow_left.png" />
+    <Content Include="Content\images\interface\nav_arrow_right.png" />
+    <Content Include="Content\images\interface\plupload_done.png" />
+    <Content Include="Content\images\interface\plupload_error.png" />
+    <Content Include="Content\images\interface\plupload_remove.png" />
+    <Content Include="Content\images\interface\plupload_title.png" />
+    <Content Include="Content\images\interface\plus.png" />
+    <Content Include="Content\images\interface\slider_handle.png" />
+    <Content Include="Content\images\interface\tables\filter.png" />
+    <Content Include="Content\images\interface\tables\sort_asc.png" />
+    <Content Include="Content\images\interface\tables\sort_asc_disabled.png" />
+    <Content Include="Content\images\interface\tables\sort_both.png" />
+    <Content Include="Content\images\interface\tables\sort_desc.png" />
+    <Content Include="Content\images\interface\tables\sort_desc_disabled.png" />
+    <Content Include="Content\images\interface\typing.gif" />
+    <Content Include="Content\images\interface\user_arrow_default.png" />
+    <Content Include="Content\images\interface\user_arrow_hover.png" />
+    <Content Include="Content\images\interface\user_menu_arrow.png" />
+    <Content Include="Content\images\interface\vertical_arrows.png" />
+    <Content Include="Content\images\interface\zoom.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo_dark.png" />
+    <EmbeddedResource Include="Content\londinium-theme.css" />
+    <EmbeddedResource Include="Content\PagedList.css" />
+    <EmbeddedResource Include="Content\styles.css" />
+    <EmbeddedResource Include="Content\PersianDatePicker.css" />
+    <Content Include="Content\PersianDatePicker.min.css" />
+    <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\User\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\RazorHelpers\BootstrapBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BootstrapBuilder.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\RazorHelpers\CheckBoxListBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CheckBoxListBuilder.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\RazorHelpers\ToastrBuilder.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ToastrBuilder.generated.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Scripts\Admin\application.js" />
+    <EmbeddedResource Include="Scripts\Admin\application_blank.js" />
+    <EmbeddedResource Include="Scripts\Admin\bootstrap.min.js" />
+    <Content Include="Scripts\Admin\charts\full\animated_1.js" />
+    <Content Include="Scripts\Admin\charts\full\animated_2.js" />
+    <Content Include="Scripts\Admin\charts\full\animated_3.js" />
+    <Content Include="Scripts\Admin\charts\full\auto_empty.js" />
+    <Content Include="Scripts\Admin\charts\full\auto_filled.js" />
+    <Content Include="Scripts\Admin\charts\full\donut.js" />
+    <Content Include="Scripts\Admin\charts\full\horizontal_bars.js" />
+    <Content Include="Scripts\Admin\charts\full\multiple_axes.js" />
+    <Content Include="Scripts\Admin\charts\full\pie.js" />
+    <Content Include="Scripts\Admin\charts\full\pie_full.js" />
+    <Content Include="Scripts\Admin\charts\full\simple_graph.js" />
+    <Content Include="Scripts\Admin\charts\full\vertical_bars.js" />
+    <Content Include="Scripts\Admin\charts\widgets\filled_blue.js" />
+    <Content Include="Scripts\Admin\charts\widgets\filled_green.js" />
+    <Content Include="Scripts\Admin\charts\widgets\filled_red.js" />
+    <Content Include="Scripts\Admin\charts\widgets\updating_1.js" />
+    <Content Include="Scripts\Admin\charts\widgets\updating_2.js" />
+    <Content Include="Scripts\Admin\charts\widgets\updating_3.js" />
+    <EmbeddedResource Include="Scripts\Admin\globalize\globalize.culture.de-DE.js" />
+    <EmbeddedResource Include="Scripts\Admin\globalize\globalize.culture.ja-JP.js" />
+    <EmbeddedResource Include="Scripts\Admin\globalize\globalize.js" />
+    <EmbeddedResource Include="Scripts\Admin\jqueryval.default.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\excanvas.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.animator.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.orderbars.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.pie.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.resize.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\flot.time.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\charts\sparkline.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\autosize.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\inputlimit.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\inputmask.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\listbox.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\multiselect.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\select2.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\switch.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\tags.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\uniform.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\uploader\plupload.full.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\uploader\plupload.queue.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\validate.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\wysihtml5\toolbar.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\forms\wysihtml5\wysihtml5.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\collapsible.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\colorpicker.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\datatables.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\daterangepicker.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\fancybox.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\fullcalendar.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\hover_dropdown.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\jgrowl.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\moment.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\mousewheel.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\prettify.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\tabletools.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\timepicker.min.js" />
+    <EmbeddedResource Include="Scripts\Admin\common.scripts.js" />
+    <Content Include="Areas\Administration\Views\Account\ForgotPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\images\.DS_Store" />
+    <Content Include="Content\images\flags\.DS_Store" />
+    <Content Include="Content\images\interface\.DS_Store" />
+    <EmbeddedResource Include="Scripts\Admin\.DS_Store" />
+    <Content Include="Scripts\Admin\charts\.DS_Store" />
+    <Content Include="Scripts\Admin\charts\widgets\.DS_Store" />
+    <Content Include="Scripts\Admin\plugins\.DS_Store" />
+    <Content Include="Scripts\Admin\plugins\charts\.DS_Store" />
+    <Content Include="Scripts\Admin\plugins\forms\.DS_Store" />
+    <EmbeddedResource Include="Scripts\Admin\plugins\interface\.DS_Store" />
+    <Content Include="Areas\Administration\Views\EditorTemplates\PersianDatePicker.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PersianDatePicker.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\ControlPanel.pubxml" />
+    <EmbeddedResource Include="Scripts\jquery.1.10.0.min.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <EmbeddedResource Include="Scripts\jquery.unobtrusive.ajax.js" />
+    <EmbeddedResource Include="Scripts\jquery.ui.1.11.4.min.js" />
+    <EmbeddedResource Include="Scripts\jquery.unobtrusive.ajax.min.js" />
+    <EmbeddedResource Include="Scripts\jquery.validate.unobtrusive.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <EmbeddedResource Include="Scripts\PersianDatePicker.js" />
+    <Content Include="Scripts\PersianDatePicker.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\Administration\Views\Emails\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Emails\Web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\AdminMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AdminMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ChangePassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ChangePassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ConfirmEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ExternalLoginConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExternalLoginConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ExternalLoginFailure.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExternalLoginFailure.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ForgotPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\Login.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Login.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ReceiveActivatorEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReceiveActivatorEmail1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\Register.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Register.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ResetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\ResetPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Account\_ExternalLoginsListPartial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ExternalLoginsListPartial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Default\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Role\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Role\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Role\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Role\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\Shared\_Toastr.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Toastr.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\User\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\User\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\User\_ListAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\UserMailer\ConfirmAccount.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmAccount.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\UserMailer\ResetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Administration\Views\UserMailer\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AradCms\Core\AradCms.Core\AradCms.Core.csproj">
+      <Project>{adb5fdbd-d417-46a7-b60b-e04073cbdfdb}</Project>
+      <Name>AradCms.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7712</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7712/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

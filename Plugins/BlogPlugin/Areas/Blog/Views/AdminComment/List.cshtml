@@ -1,0 +1,164 @@
+﻿@model IEnumerable<BlogPlugin.Models.PostComment>
+@{
+    ViewBag.Title = "کامنتهای محتوا";
+    int catid = ViewBag.CatId;
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-2">
+                @Html.ActionLink("بازگشت به لیست محتوا", BMVC.Blog.AdminPost.ActionNames.List, BMVC.Blog.AdminPost.Name, new { id = catid, area = BMVC.Blog.Name }, new { @class = "btn btn-sm btn-info" })
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" id="CategoryList">
+    <div class="panel-heading"><strong>لیست دیدگاه ها</strong></div>
+    <div class="panel-body min-height-340">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">نام </th>
+                                <th class="text-center">متن نظر</th>
+                                <th class="text-center">ایمیل</th>
+                                <th class="text-center">وضعیت انتشار</th>
+                                <th class="text-center">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">
+                                        <strong class="text-info">
+                                           @Html.DisplayFor(a=>item.Author)
+                                        </strong>
+                                    </td>
+                                    <td>@Html.DisplayFor(a => item.Body)</td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(m => item.Email)
+                                    </td>
+
+                                    <td class="text-center" id="comment-status@(item.Id)">
+                                        @if (Convert.ToBoolean(item.IsPublished))
+                                        {
+                                            
+                                            @Html.Action(BMVC.Blog.AdminComment.ActionNames.RenderApproveButtons
+                            , new { id = item.Id, type = "disapproved" })
+                                        }
+                                        else
+                                        {
+                                            
+                                            @Html.Action(BMVC.Blog.AdminComment.ActionNames.RenderApproveButtons
+                            , new { id = item.Id, type = "approved" })
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="btn btn-danger " onclick="Reply(@item.Id)">پاسخ دهید<i class="icon-trash "></i></button>
+                                        <button class="btn btn-info " onclick="ReplyShow(@item.Id)">نمایش پاسخ ها<i class="icon-trash "></i></button>
+                                        <button class="btn btn-default " onclick="Edit(@item.Id)">ویرایش دیدگاه<i class="icon-trash "></i></button>
+                                        <button class="btn btn-danger " onclick="Delete(@item.Id)">حذف<i class="icon-trash "></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        @*@Html.PagedListPager(new StaticPagedList<ArticleDataTableViewModel>(Model, ViewBag.PageNumber, 5, ViewBag.TotalRoles), pageNumber => Url.Action(PMVC.Pannel.Role.ActionNames.ListAjax, PMVC.Pannel.Role.Name, new
+            {
+                term = ViewBag.Term,
+                page = pageNumber
+            }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.ClassicPlusFirstAndLast, new AjaxOptions { AllowCache = false, HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "roleList", OnComplete = "onComplete" }))*@
+    </div>
+</div>
+<script>
+    Public.Routin();
+</script>
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="bodymodal">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script>
+        function showLoading() {
+
+            var top = ($(window).height() - $('div#loading').height()) / 2;
+
+            $('div#loading').css({ 'z-index': '2000', 'top': top + $(document).scrollTop() }).fadeIn('slow');
+        }
+        function hideLoading() {
+            $('div#loading').fadeOut('slow').css('z-index', '10');
+        }
+        function Reply(id) {
+
+            $.ajax({
+                url: "/Blog/AdminComment/Reply/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('پاسخ نظر');
+                $("#bodymodal").html(result);
+
+            });
+        }
+        function ReplyShow(Id) {
+
+            $.ajax({
+                url: "/Blog/AdminComment/ReplyShow/" + Id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('پاسخ نظر');
+                $("#bodymodal").html(result);
+
+            });
+        }
+        function Edit(id) {
+
+            $.ajax({
+                url: "/Blog/AdminComment/Edit/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('پاسخ نظر');
+                $("#bodymodal").html(result);
+
+            });
+        }
+        function Delete(id) {
+
+            $.ajax({
+                url: "/Blog/AdminComment/Delete/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('حذف خبر');
+                $("#bodymodal").html(result);
+
+            });
+        }
+    </script>
+}

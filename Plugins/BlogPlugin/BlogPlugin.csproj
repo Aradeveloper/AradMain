@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F471865-0E12-4D07-9A54-34B67761EB7B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlogPlugin</RootNamespace>
+    <AssemblyName>BlogPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\RazorGenerator.Mvc.2.4.7\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=4.3.0.449, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\StructureMap.4.4.0\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AradMain\packages\T4MVCExtensions.3.17.5\lib\net40\T4MVCExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\PluginBlog.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Areas\Blog\BlogAreaRegistration.cs" />
+    <Compile Include="Areas\Blog\Controllers\AdminBlogController.cs" />
+    <Compile Include="Areas\Blog\Controllers\AdminCommentController.cs" />
+    <Compile Include="Areas\Blog\Controllers\AdminPostController.cs" />
+    <Compile Include="Areas\Blog\Controllers\WidgetController.cs" />
+    <Compile Include="Areas\Blog\Views\AdminBlog\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminBlog\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminBlog\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminBlog\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\Reply.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reply.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\ReplyShow.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReplyShow.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminComment\_ApproveStatusButton.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ApproveStatusButton.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminPost\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminPost\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminPost\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\AdminPost\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\AddComent.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddComent.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\Detailes.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detailes.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetBlogSidebar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetBlogSidebar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetComments.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetComments.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetFooterNews.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetFooterNews.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetBlogFooter.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetBlogFooter.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetBlogList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetBlogList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetLatestPost.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetLatestPost.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetNewsList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetNewsList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\Widget\GetPopullore.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetPopullore.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blog\Views\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.AdminBlogController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.AdminCommentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.AdminPostController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.WidgetController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\BlogConfig.cs" />
+    <Compile Include="Configuration\BlogPostConfig.cs" />
+    <Compile Include="Configuration\PostCommentConfig.cs" />
+    <Compile Include="Configuration\TagConfig.cs" />
+    <Compile Include="IService\IBlogService.cs" />
+    <Compile Include="IService\ICommentService.cs" />
+    <Compile Include="IService\IPostService.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\BlogPost.cs" />
+    <Compile Include="Models\PostComment.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BlogService.cs" />
+    <Compile Include="Service\ComentService.cs" />
+    <Compile Include="Service\PostService.cs" />
+    <Compile Include="Service\ReceiptService.cs" />
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddOrUpdateBlog.cs" />
+    <Compile Include="ViewModel\AddOrUpdatePost.cs" />
+    <Compile Include="ViewModel\AddUserCommentModel.cs" />
+    <Compile Include="ViewModel\CommentDataTableModel.cs" />
+    <Compile Include="ViewModel\DataTableBlog.cs" />
+    <Compile Include="ViewModel\DataTablePost.cs" />
+    <Compile Include="ViewModel\EditCommentModel.cs" />
+    <Compile Include="ViewModel\PostDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Blog\Views\web.config" />
+    <Content Include="Areas\Blog\Views\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminBlog\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminBlog\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminBlog\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminBlog\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminPost\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminPost\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminPost\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminPost\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetLatestPost.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetLatestPost.generated.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Content\animate.css" />
+    <EmbeddedResource Include="Content\anythingslider.css" />
+    <EmbeddedResource Include="Content\theme-minimalist-round.css" />
+    <Content Include="Areas\Blog\Views\Widget\GetBlogList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetBlogList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetBlogFooter.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetBlogFooter.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetNewsList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetNewsList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\Detailes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detailes.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetPopullore.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetPopullore.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetFooterNews.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetFooterNews.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetComments.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetComments.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\AddComent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AddComent.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\Widget\GetBlogSidebar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GetBlogSidebar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\Reply.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Reply.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\ReplyShow.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReplyShow.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Blog\Views\AdminComment\_ApproveStatusButton.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ApproveStatusButton.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\PluginBlog.pubxml" />
+    <EmbeddedResource Include="Content\page.css" />
+    <EmbeddedResource Include="Content\prettify.css" />
+    <EmbeddedResource Include="Scripts\jquery-1.10.2.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <EmbeddedResource Include="Scripts\jquery.jatt.min.js" />
+    <EmbeddedResource Include="Scripts\jquery.anythingslider.fx.js" />
+    <EmbeddedResource Include="Scripts\jquery.anythingslider.js" />
+    <EmbeddedResource Include="Scripts\jquery.anythingslider.video.js" />
+    <EmbeddedResource Include="Scripts\jquery.easing.1.2.js" />
+    <EmbeddedResource Include="Scripts\jquery.anythingslider.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <EmbeddedResource Include="Scripts\prettify.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <EmbeddedResource Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\_references.js" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AradCms.Core\AradCms.Core.csproj">
+      <Project>{adb5fdbd-d417-46a7-b60b-e04073cbdfdb}</Project>
+      <Name>AradCms.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18126</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18126/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BlogPlugin.Models.PostComment>
+@if (Model != null)
+{
+    <div id="comments">
+        <h3></h3>
+        <ol id="singlecomments" class="commentlist">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="user"><img alt="" src="~/Content/Loom/images/u1.jpg" class="avatar" /></div>
+                    <div class="message">
+                        <div class="arrow-box">
+                            <div class="info">
+                                <h2>
+                                    <a href="#">
+                                        @Html.DisplayFor(a => item.Author)
+                                    </a>
+                                </h2>
+                                <div class="meta"> <span class="date">@Html.ConvertToPersianDateTime(item.CreatedOn)</span> <span class="reply"><a class="reply-link" href="#">پاسخ</a></span> </div>
+                            </div>
+                            <p>@Html.DisplayFor(a => item.Body)</p>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ol>
+    </div>
+}

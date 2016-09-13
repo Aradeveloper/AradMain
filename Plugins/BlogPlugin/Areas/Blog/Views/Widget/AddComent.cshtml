@@ -1,0 +1,30 @@
+﻿@model BlogPlugin.Models.PostComment
+<div class="comment-form-wrapper">
+    <h3>نظرتان را در مورد این مطلب با دیگران در میان بگذارید</h3>
+    <p>
+        آدرس ایمیل شما منتشر نخواهد شد. زمینه های مورد نیاز مشخص شده اند
+        *
+    </p>
+    @using (Html.BeginForm(BMVC.Blog.Widget.ActionNames.AddComent, BMVC.Blog.Widget.Name, new { area = BMVC.Blog.Name }, FormMethod.Post, new { role = "form", @class = "comment-form", autocomplete = "off", id = "addcomment", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="name-field">
+            @Html.TextBoxFor(a => a.Author, new { @placeholder = "نام*" })
+            @Html.ValidationMessageFor(m => m.Author, "", new { @class = "text-danger" })
+        </div>
+        <div class="email-field">
+            @Html.TextBoxFor(a => a.Email, new { @placeholder = "ایمیل*" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="message-field">
+            @Html.TextAreaFor(a => a.Body, new { @rows = "5", @cols = "30", @placeholder = "نظر خود را اینجا وارد کنید...*" })
+            @Html.ValidationMessageFor(m => m.Body, "", new { @class = "text-danger" })
+        </div>
+        <input type="submit" value="ثبت" name="submit" class="btn btn-submit" />
+    }
+</div>
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PortfoiloPlugin.ViewModel.DataTableCategory>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Themes/Admin/_LayoutAdmin.cshtml";
+}
+<!-- Default table -->
+<div class="panel panel-default">
+    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table2"></i> مجموعه نمونه کار</h6><p class="pull-left">@Html.ActionLink("ایجاد مجموعه", PoMVC.Portfoilo.AdminCategory.ActionNames.Create, PoMVC.Portfoilo.AdminCategory.Name, new { area = PoMVC.Portfoilo.Name }, new { @class = "btn btn-sm btn-primary" })</p></div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام بلاگ</th>
+                    <th>وضعیت انتشار</th>
+                    <th>پسوند لینک</th>
+                    <th>تعداد پستها</th>
+                    <th>تصویر</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@Html.DisplayFor(a => item.Id)</td>
+                            <td>@Html.DisplayFor(a => item.Name)</td>
+                            <td>
+                                @if (item.IsActive)
+                                {
+                                    <text>
+                                        <i class="fa fa-check text-success"></i>
+                                    </text>
+                                }
+                                else
+                                {
+                                    <text>
+                                        <i class="fa fa-minus text-warning"></i>
+                                    </text>
+                                }
+                            </td>
+                            <td>@Html.DisplayFor(a => item.Slug)</td>
+                            <td>@Html.DisplayFor(a => item.PostCount)</td>
+                            <td><img src="~/Uploads/SiteMedia/Category/@item.ImagePath" class="img-thumbnail" width="80" height="80" /></td>
+                            <td>
+                                @Html.ActionLink("ویرایش", PoMVC.Portfoilo.AdminCategory.ActionNames.Edit, PoMVC.Portfoilo.AdminCategory.Name, new { Id = item.Id, area = PoMVC.Portfoilo.Name }, new { @class = "btn btn-sm btn-primary" })
+                                @Html.ActionLink("ایجاد پست جدید", PoMVC.Portfoilo.AdminPortfoilo.ActionNames.Create, PoMVC.Portfoilo.AdminPortfoilo.Name, new { Id = item.Id, area = PoMVC.Portfoilo.Name }, new { @class = "btn btn-sm btn-primary" })
+                                @Html.ActionLink("پستهای مرتبط", PoMVC.Portfoilo.AdminPortfoilo.ActionNames.List, PoMVC.Portfoilo.AdminPortfoilo.Name, new { Id = item.Id, area = PoMVC.Portfoilo.Name }, new { @class = "btn btn-sm btn-primary" })
+                                <button class="btn btn-danger " onclick="Delete(@item.Id)">حذف<i class="icon-trash "></i></button>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /default table -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="bodymodal">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script>
+        function Delete(id) {
+
+            $.ajax({
+                url: "/Blog/AdminBlog/Delete/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $("#myModal").modal('show');
+                $("#myModalLabel").html('حذف');
+                $("#bodymodal").html(result);
+
+            });
+        }
+    </script>
+}

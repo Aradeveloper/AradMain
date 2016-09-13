@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+
+@if (Model != null)
+{
+    
+    <div class="row text-center services-1">
+
+        @foreach (var item in Model)
+                {
+            <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">
+                <div class="col-md-3 col-sm-6">
+                    <div class="col-wrapper">
+
+                        <div class="icon-border bm15"> <img src="~/Uploads/SiteMedia/Post/@item.PostImage" class="img-thumbnail" alt="Cinque Terre" width="200" height="120"/>  </div>
+                        <h5 class="upper">@Html.DisplayFor(a => item.Title)</h5>
+                       
+                    </div>
+                </div>
+            </a>
+        }
+
+        <!-- /.item -->
+    </div>
+    
+}

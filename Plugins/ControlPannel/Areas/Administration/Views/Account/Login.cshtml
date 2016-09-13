@@ -1,0 +1,68 @@
+﻿@using AradCms.Core.Helpers
+@using AradCms.Core.ViewModel.Account
+@model LoginViewModel
+@{
+    Layout = "~/Views/Themes/Admin/_LoginLayout.cshtml";
+
+    ViewBag.Title = "ورود به پنل";
+}
+
+@using (Html.BeginForm(PaMVC.Administration.Account.ActionNames.Login, PaMVC.Administration.Account.Name, new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", id = "loginForm", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="login-wrapper">
+
+        <div class="popup-header">
+            <a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
+            <span class="text-semibold">User Login</span>
+            <div class="btn-group pull-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cogs"></i></a>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a href="#"><i class="icon-people"></i> Change user</a></li>
+                    <li><a href="#"><i class="icon-info"></i> Forgot password?</a></li>
+                    <li><a href="#"><i class="icon-support"></i> Contact admin</a></li>
+                    <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="well">
+            <div class="form-group has-feedback">
+                <label>نام کاربری</label>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "نام کاربری" })
+                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+
+                <i class="icon-users form-control-feedback"></i>
+            </div>
+            <div class="form-group has-feedback">
+                <label>کلمه عبور</label>
+                @Html.FormControlPasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <i class="icon-lock form-control-feedback"></i>
+            </div>
+            <div class="form-group has-feedback">
+                <label>گزینه صحیح را انتخاب نمایید</label>
+                <div style="margin:auto">
+                    @Html.reCaptcha()
+                </div>
+            </div>
+            <div class="row form-actions">
+                <div class="col-xs-6">
+                    <div class="checkbox checkbox-success">
+                        <label>
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox-inline" })
+                            @Html.LabelFor(m => m.RememberMe, new { @class = "control-label" })
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-warning pull-right"><i class="icon-menu2"></i> Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

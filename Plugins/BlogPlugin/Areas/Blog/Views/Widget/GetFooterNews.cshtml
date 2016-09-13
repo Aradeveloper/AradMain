@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BlogPlugin.ViewModel.DataTablePost>
+
+@if (Model != null)
+{
+    <div class="col-sm-3">
+        <div class="widget">
+            <h3 class="widget-title upper">مطالب محبوب</h3>
+            <ul class="post-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <h6><a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">@Html.DisplayFor(a => item.Title)</a></h6>
+                        <em>@Html.ConvertToPersianDateTime(item.Timestamp)</em>
+                    </li>
+                }
+            </ul>
+            <!-- /.post-list -->
+        </div>
+        <!-- /.widget -->
+    </div>
+
+}

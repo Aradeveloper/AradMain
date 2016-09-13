@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="fa" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="webdesigndl.com">
+    <link rel="shortcut icon" href="@Links.Content.Loom.images.favicon_png">
+    <title>
+        @ViewBag.Title - @Html.Partial(MVC.Shared.Views._SiteName)
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @Html.Partial(MVC.Shared.Views._Opengraph)
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+    <div class="body-wrapper ">
+        @Html.Partial(MVC.Shared.Views._ZoneNav)
+        <!--/.navbar -->
+        <div class="offset"></div>
+        @RenderBody()
+        <!-- /.process -->
+        @Html.Partial(MVC.Shared.Views._ZoneFooter)
+        <!-- /footer -->
+    </div>
+    <!-- /.body-wrapper -->
+    
+    @Html.Partial(MVC.Shared.Views._ZoneContact)
+    
+    @Html.Partial(MVC.Shared.Views._ZoneSocialSidebar)
+        
+    <!-- /canvas -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/AradScript")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

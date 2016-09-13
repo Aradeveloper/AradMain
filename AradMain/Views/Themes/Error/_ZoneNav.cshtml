@@ -1,0 +1,39 @@
+﻿@using AradCms.Core.IOC
+@using AradCms.Core.Plugin
+
+@{
+    var plugins = ProjectObjectFactory.Container.GetAllInstances<IPlugin>().ToList();
+}
+
+<div class="mainmenu_area">
+
+    <div class="menu_heading column">
+        <h2>کجا دوست داری بری ؟</h2>
+    </div>
+
+    <!-- mainmenu -->
+    <div class="mainmenu_bg">
+        <div class="mainmenu column">
+            <ul>
+                
+                @foreach (var plugin in plugins)
+                {
+                    foreach (var item in plugin.GetMenuItem(this.Request.RequestContext))
+                    {
+                        if (!item.IsAuthorize && !item.IsWidget && item.WidgetZoneName == "ZoneMainMenu")
+                        {
+                            <li>@Html.ActionLink(item.Name, item.Action, item.Controller, new { Id = item.item, area = item.Area }, new { title = Html.CleanUrl(item.Slag) })</li>
+
+                        }
+                    }
+
+                }
+                <li>
+                    <a href="@Url.Action(MVC.Home.ActionNames.Index,MVC.Home.Name,new {area="" })">صفحه اصلی</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+
+</div>
