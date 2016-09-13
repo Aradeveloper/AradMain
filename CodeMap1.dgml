@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1)" Category="CodeSchema_Assembly" Bounds="20,40,150.936666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(adb5fdbd-d417-46a7-b60b-e04073cbdfdb.OutputPath)" Group="Collapsed" Label="AradCms.Core.dll" />
-    <Node Id="Core{02FF2F21-E754-4D59-854F-76BFFE3E233A}" Category="CodeMap_SolutionFolder" Bounds="0,0,190.936666666667,85" Group="Expanded" Label="Core" />
+    <Node Id="(@1)" Category="CodeSchema_Assembly" Bounds="16.9999999999998,36.0001,150.936666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(adb5fdbd-d417-46a7-b60b-e04073cbdfdb.OutputPath)" Group="Collapsed" Label="AradCms.Core.dll" UseManualLocation="True" />
+    <Node Id="Core{02FF2F21-E754-4D59-854F-76BFFE3E233A}" Category="CodeMap_SolutionFolder" Bounds="-3.00000000000017,-3.9999,190.936666666667,85" Group="Expanded" Label="Core" UseManualLocation="True" />
   </Nodes>
   <Links>
     <Link Source="Core{02FF2F21-E754-4D59-854F-76BFFE3E233A}" Target="(@1)" Category="Contains" FetchingParent="Core{02FF2F21-E754-4D59-854F-76BFFE3E233A}" />
@@ -26,7 +26,7 @@
     <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
-    <Property Id="Icon" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
@@ -36,6 +36,7 @@
     <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
     <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
     <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
     <Property Id="Value" DataType="System.String" />
     <Property Id="ValueLabel" DataType="System.String" />
     <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />

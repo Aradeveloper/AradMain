@@ -106,7 +106,7 @@ WriteLiteral("></i></a>\r\n            <span");
 
 WriteLiteral(" class=\"text-semibold\"");
 
-WriteLiteral(">User Login</span>\r\n            <div");
+WriteLiteral(">ورود کاربر</span>\r\n            <div");
 
 WriteLiteral(" class=\"btn-group pull-right\"");
 
@@ -277,8 +277,8 @@ WriteLiteral("                            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                            Remember me\r\n                        </label>\r\n    " +
-"                </div>\r\n                </div>\r\n                <div");
+WriteLiteral("\r\n                        </label>\r\n                    </div>\r\n                <" +
+"/div>\r\n                <div");
 
 WriteLiteral(" class=\"col-xs-6\"");
 
@@ -292,11 +292,11 @@ WriteLiteral("><i");
 
 WriteLiteral(" class=\"icon-menu2\"");
 
-WriteLiteral("></i> Sign in</button>\r\n                </div>\r\n            </div>\r\n        </div" +
-">\r\n    </div>\r\n");
+WriteLiteral("></i>ورود</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n " +
+"   </div>\r\n");
 
             
-            #line 64 "..\..\Areas\Administration\Views\Account\Login.cshtml"
+            #line 63 "..\..\Areas\Administration\Views\Account\Login.cshtml"
 
 }
 
@@ -310,7 +310,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 67 "..\..\Areas\Administration\Views\Account\Login.cshtml"
+            #line 66 "..\..\Areas\Administration\Views\Account\Login.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
