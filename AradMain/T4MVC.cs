@@ -1221,6 +1221,7 @@ namespace Links
         
         }
     
+        public static readonly string jquery_1_10_1_min_js = Url("jquery-1.10.1.min.js");
         public static readonly string jquery_3_1_0_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.intellisense.min.js") ? Url("jquery-3.1.0.intellisense.min.js") : Url("jquery-3.1.0.intellisense.js");
         public static readonly string jquery_3_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.0.min.js") ? Url("jquery-3.1.0.min.js") : Url("jquery-3.1.0.js");
         public static readonly string jquery_3_1_0_min_js = Url("jquery-3.1.0.min.js");
@@ -1232,6 +1233,7 @@ namespace Links
         public static readonly string jquery_migrate_3_0_0_min_js = Url("jquery-migrate-3.0.0.min.js");
         public static readonly string jquery_ui_1_12_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui-1.12.0.min.js") ? Url("jquery-ui-1.12.0.min.js") : Url("jquery-ui-1.12.0.js");
         public static readonly string jquery_ui_1_12_0_min_js = Url("jquery-ui-1.12.0.min.js");
+        public static readonly string jquery_ui_min_js = Url("jquery-ui.min.js");
         public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
         public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
@@ -1842,6 +1844,7 @@ namespace Links
             public static readonly string prettify_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/prettify.min.css") ? Url("prettify.min.css") : Url("prettify.css");
             public static readonly string settings_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/settings.min.css") ? Url("settings.min.css") : Url("settings.css");
             public static readonly string socialcss_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/socialcss.min.css") ? Url("socialcss.min.css") : Url("socialcss.css");
+            public static readonly string socicon_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/socicon.min.css") ? Url("socicon.min.css") : Url("socicon.css");
             public static readonly string style_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/style.min.css") ? Url("style.min.css") : Url("style.css");
         }
     
@@ -2972,6 +2975,7 @@ namespace Links
                 public const string bootstrap_rtl_min_js = "~/Scripts/bootstrap-rtl.min.js"; 
                 public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
                 public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
+                public const string jquery_1_10_1_min_js = "~/Scripts/jquery-1.10.1.min.js"; 
                 public const string jquery_3_1_0_intellisense_js = "~/Scripts/jquery-3.1.0.intellisense.js"; 
                 public const string jquery_3_1_0_js = "~/Scripts/jquery-3.1.0.js"; 
                 public const string jquery_3_1_0_min_js = "~/Scripts/jquery-3.1.0.min.js"; 
@@ -2981,6 +2985,7 @@ namespace Links
                 public const string jquery_migrate_3_0_0_min_js = "~/Scripts/jquery-migrate-3.0.0.min.js"; 
                 public const string jquery_ui_1_12_0_js = "~/Scripts/jquery-ui-1.12.0.js"; 
                 public const string jquery_ui_1_12_0_min_js = "~/Scripts/jquery-ui-1.12.0.min.js"; 
+                public const string jquery_ui_min_js = "~/Scripts/jquery-ui.min.js"; 
                 public const string jquery_unobtrusive_ajax_js = "~/Scripts/jquery.unobtrusive-ajax.js"; 
                 public const string jquery_unobtrusive_ajax_min_js = "~/Scripts/jquery.unobtrusive-ajax.min.js"; 
                 public const string jquery_validate_js = "~/Scripts/jquery.validate.js"; 
@@ -3085,6 +3090,7 @@ namespace Links
                     public const string prettify_css = "~/Content/Loom/prettify.css";
                     public const string settings_css = "~/Content/Loom/settings.css";
                     public const string socialcss_css = "~/Content/Loom/socialcss.css";
+                    public const string socicon_css = "~/Content/Loom/socicon.css";
                     public const string style_css = "~/Content/Loom/style.css";
                 }
             }

@@ -36,7 +36,7 @@ ul {
         display: block;
         height: 35px;
         font: 16px "Open Sans", sans-serif;
-        line-height: 35px;
+        line-height: 42px;
         position: relative;
         text-align: center;
         width: 35px;
@@ -48,12 +48,16 @@ ul {
             position: absolute;
             text-align: center;
             width: 120px;
+z-index:-1;
+ -webkit-transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    transition: all 300ms ease-out 0s;
         }
 
         #sticky-social a:hover span {
             left: 100%;
         }
-
         #sticky-social a[class*="facebook"],
         #sticky-social a[class*="facebook"]:hover,
         #sticky-social a[class*="facebook"] span {

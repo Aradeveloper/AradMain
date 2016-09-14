@@ -254,7 +254,10 @@ WriteLiteral("> <img");
 
 WriteLiteral(" alt=\"\"");
 
-WriteLiteral(" src=\"style/images/art/author.jpg\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 2096), Tuple.Create("\"", 2134)
+, Tuple.Create(Tuple.Create("", 2102), Tuple.Create<System.Object, System.Int32>(Href("~/Content/Loom/images/author.jpg")
+, 2102), false)
+);
 
 WriteLiteral(" /> </div>\r\n        <div");
 
@@ -321,20 +324,20 @@ WriteLiteral("></div>\r\n    </div>\r\n    <hr />\r\n");
             #line 65 "..\..\Areas\Blog\Views\Widget\Detailes.cshtml"
      if (Model.CommentStatuse)
     {
-            
+        
             
             #line default
             #line hidden
             
             #line 67 "..\..\Areas\Blog\Views\Widget\Detailes.cshtml"
-       Write(Html.Action(BMVC.Blog.Widget.ActionNames.GetComments, BMVC.Blog.Widget.Name, new { id = Model.Id }));
+   Write(Html.Action(BMVC.Blog.Widget.ActionNames.GetComments, BMVC.Blog.Widget.Name, new { id = Model.Id }));
 
             
             #line default
             #line hidden
             
             #line 67 "..\..\Areas\Blog\Views\Widget\Detailes.cshtml"
-                                                                                                                
+                                                                                                            
     }
 
             

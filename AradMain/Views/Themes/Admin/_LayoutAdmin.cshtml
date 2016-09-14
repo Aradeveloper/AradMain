@@ -13,36 +13,6 @@
     <link href="@Links.Content.Admin.styles_css" rel="stylesheet" type="text/css">
     <link href="@Links.Content.Admin.icons_css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="@Links.Scripts.jquery_unobtrusive_ajax_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.charts.sparkline_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uniform_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.select2_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.inputmask_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.autosize_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.inputlimit_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.listbox_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.multiselect_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.validate_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.tags_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.switch_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uploader.plupload_full_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uploader.plupload_queue_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.wysihtml5.wysihtml5_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.wysihtml5.toolbar_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.daterangepicker_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.fancybox_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.moment_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.jgrowl_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.datatables_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.colorpicker_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.fullcalendar_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.timepicker_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.bootstrap_rtl_min_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.application_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.common_scripts_js"></script>
-    <script type="text/javascript" src="@Links.Scripts.Admin.jqueryval_default_js"></script>
 
     @RenderSection("Header", required: false)
 </head>
@@ -317,14 +287,7 @@
                         </div>
                     </li>
                     <li class="language dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/flags/german.png" alt=""> <span>German</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-right icons-right">
-                            <li><a href="#"><img src="images/flags/ukrainian.png" alt=""> Ukrainian</a></li>
-                            <li class="active"><a href="#"><img src="images/flags/english.png" alt=""> English</a></li>
-                            <li><a href="#"><img src="images/flags/spanish.png" alt=""> Spanish</a></li>
-                            <li><a href="#"><img src="images/flags/german.png" alt=""> German</a></li>
-                            <li><a href="#"><img src="images/flags/hungarian.png" alt=""> Hungarian</a></li>
-                        </ul>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="@Links.Content.Admin.images.flags.english_png" alt=""> <span>German</span> <b class="caret"></b></a>
                     </li>
                 </ul>
             </div>
@@ -346,6 +309,37 @@
     </div>
     <!-- /page container -->
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="@Links.Scripts.jquery_unobtrusive_ajax_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.charts.sparkline_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uniform_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.select2_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.inputmask_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.autosize_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.inputlimit_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.listbox_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.multiselect_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.validate_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.tags_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.switch_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uploader.plupload_full_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.uploader.plupload_queue_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.wysihtml5.wysihtml5_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.forms.wysihtml5.toolbar_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.daterangepicker_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.fancybox_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.moment_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.jgrowl_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.datatables_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.colorpicker_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.fullcalendar_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.plugins.admininterface.timepicker_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.bootstrap_rtl_min_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.application_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.common_scripts_js"></script>
+    <script type="text/javascript" src="@Links.Scripts.Admin.jqueryval_default_js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

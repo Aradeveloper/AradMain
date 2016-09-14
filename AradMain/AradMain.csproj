@@ -339,9 +339,12 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Loom\green.css" />
+    <Content Include="Content\Loom\images\author.jpg" />
+    <Content Include="Content\Loom\images\bg.png" />
     <Content Include="Content\Loom\images\favicon.png" />
     <Content Include="Content\Loom\images\logo%402x.png" />
     <Content Include="Content\Loom\images\logo.png" />
+    <Content Include="Content\Loom\images\page-background.png" />
     <Content Include="Content\Loom\images\parallax1.jpg" />
     <Content Include="Content\Loom\images\parallax2.jpg" />
     <Content Include="Content\Loom\images\slider-transparent.png" />
@@ -366,12 +369,14 @@
     <Content Include="fonts\socicon\socicon.svg" />
     <Content Include="Scripts\bootstrap-rtl.js" />
     <Content Include="Scripts\bootstrap-rtl.min.js" />
+    <Content Include="Scripts\jquery-1.10.1.min.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
     <Content Include="Scripts\jquery-migrate-3.0.0.js" />
     <Content Include="Scripts\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\Loom\bootstrap.min.js" />
     <Content Include="Scripts\Loom\fancybox\helpers\jquery.fancybox-thumbs0ff5.min.css">
       <DependentUpon>jquery.fancybox-thumbs0ff5.css</DependentUpon>
@@ -1288,6 +1293,14 @@
     <ProjectReference Include="..\Core\AradCms.Core\AradCms.Core.csproj">
       <Project>{adb5fdbd-d417-46a7-b60b-e04073cbdfdb}</Project>
       <Name>AradCms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\BlogPlugin\BlogPlugin.csproj">
+      <Project>{9f471865-0e12-4d07-9a54-34b67761eb7b}</Project>
+      <Name>BlogPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ControlPannel\ControlPannel.csproj">
+      <Project>{2db739d2-65fe-4da8-84d3-4f987398f708}</Project>
+      <Name>ControlPannel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

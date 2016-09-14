@@ -1,6 +1,6 @@
 .pagination {
   display: inline-block;
-  padding-right: 0;
+  padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
 }
@@ -12,9 +12,9 @@
 .pagination > li > a,
 .pagination > li > span {
   position: relative;
-  float: right;
+  float: left;
   padding: 6px 12px;
-  margin-right: -1px;
+  margin-left: -1px;
   line-height: 1.428571429;
   text-decoration: none;
   background-color: #ffffff;
@@ -23,9 +23,9 @@
 
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
-  margin-right: 0;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .pagination > li:last-child > a,
@@ -72,8 +72,8 @@
 
 .pagination-lg > li:first-child > a,
 .pagination-lg > li:first-child > span {
-  border-bottom-right-radius: 6px;
-  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .pagination-lg > li:last-child > a,
@@ -90,8 +90,8 @@
 
 .pagination-sm > li:first-child > a,
 .pagination-sm > li:first-child > span {
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
 }
 
 .pagination-sm > li:last-child > a,
@@ -101,7 +101,7 @@
 }
 
 .pager {
-  padding-right: 0;
+  padding-left: 0;
   margin: 20px 0;
   text-align: center;
   list-style: none;
@@ -153,7 +153,7 @@
 
 .pager .previous > a,
 .pager .previous > span {
-  float: right;
+  float: left;
 }
 
 .pager .disabled > a,

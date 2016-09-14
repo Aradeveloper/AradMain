@@ -732,7 +732,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AradCms\Core\AradCms.Core\AradCms.Core.csproj">
+    <ProjectReference Include="..\..\Core\AradCms.Core\AradCms.Core.csproj">
       <Project>{adb5fdbd-d417-46a7-b60b-e04073cbdfdb}</Project>
       <Name>AradCms.Core</Name>
     </ProjectReference>

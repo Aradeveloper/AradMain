@@ -45,7 +45,7 @@
         <hr />
     </div>
     <div class="about-author image-caption">
-        <div class="author-image"> <img alt="" src="style/images/art/author.jpg" /> </div>
+        <div class="author-image"> <img alt="" src="~/Content/Loom/images/author.jpg" /> </div>
         <div class="author-details">
             <h3>
                 درباره نویسنده
@@ -64,7 +64,7 @@
     <hr />
     @if (Model.CommentStatuse)
     {
-            @Html.Action(BMVC.Blog.Widget.ActionNames.GetComments, BMVC.Blog.Widget.Name, new { id = Model.Id })
+        @Html.Action(BMVC.Blog.Widget.ActionNames.GetComments, BMVC.Blog.Widget.Name, new { id = Model.Id })
     }
     <!-- /#comments -->
     <hr />
