@@ -1,15 +1,3 @@
-/*
-Theme Name: Loom - Multipurpose Responsive HTML5 Template
-Theme URI: http://themes.iki-bir.com/loom
-Author: elemis
-Author URI: http://iki-bir.com
-Version: 1.0
-RTL: WebDesignDL http://webdesigndl.com
-
-*/
-/*-----------------------------------------------------------------------------------*/
-/*	RESET
-/*-----------------------------------------------------------------------------------*/
 @font-face {
     font-family: "Yekan";
     src: url( "../../fonts/W_YEKAN_0.TTF" );
@@ -351,8 +339,8 @@ h2.post-title {
 }
 
 .dark-wrapper {
-         background-image: url("../../Content/Loom/images/bg.png");
-		background-repeat: repeat;
+    background-image: url("../../Content/Loom/images/bg.png");
+    background-repeat: repeat;
 }
 
 ul {
@@ -709,7 +697,7 @@ footer .post-list {
 /*-----------------------------------------------------------------------------------*/
 .offset {
     display: block;
-	position: absolute;
+    position: absolute;
 }
 
 .navbar.basic.default {
@@ -727,11 +715,11 @@ footer .post-list {
 
     .navbar.basic.fixed .navbar-header {
         background-image: url("../../Content/Loom/images/page-background.png");
-		background-repeat: repeat;
+        background-repeat: repeat;
         -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.11);
         -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.11);
         box-shadow: 0 1px 0 rgba(0,0,0,0.11);
-opacity:0.9;
+        opacity: 0.9;
     }
 
     .navbar.basic.fixed .navbar-brand {
@@ -1694,7 +1682,7 @@ textarea,
             border: 1px solid #1ABB9C;
             -webkit-box-shadow: 0px 0px 6px #1ABB9C;
             -moz-box-shadow: 0px 0px 6px #1ABB9C;
-           box-shadow: 0px 0px 6px #1ABB9C;
+            box-shadow: 0px 0px 6px #1ABB9C;
         }
 
 textarea {

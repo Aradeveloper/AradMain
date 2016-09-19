@@ -2,7 +2,7 @@
 using AradCms.Core.IOC;
 using AradCms.Core.Migrations;
 using AradCms.Core.Plugin;
-using AradWeb;
+using AradMain;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,7 +10,7 @@ using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(EFBootstrapperStart), "Start")]
 
-namespace AradWeb
+namespace AradMain
 {
     public static class EFBootstrapperStart
     {

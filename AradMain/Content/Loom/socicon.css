@@ -3,7 +3,7 @@
 @font-face {
     font-family: "socicon";
     src: url("../../fonts/socicon/socicon.eot");
-    src: url("../../fonts/socicon/socicon.eot?#iefix") format("embedded-opentype"), url("../../fonts/socicon/socicon.woff") format("woff"), url("../../fonts/socicon/socicon.ttf") format("truetype"), url("../../fonts/socicon/socicon.svg#socicon") format("svg");
+    src: url("../../fonts/socicon/socicon.eot?#iefix") format("embedded-opentype"),  url("../../fonts/socicon/socicon.ttf") format("truetype"), url("../../fonts/socicon/socicon.svg#socicon") format("svg");
     font-weight: normal;
     font-style: normal;
 }

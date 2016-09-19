@@ -28,19 +28,19 @@ namespace AradMain
             bundles.Add(new StyleBundle("~/Content/css").Include(
 
                       "~/Content/bootstrap-rtl.min.css",
-                      "~/Content/font-awesome.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/Loom/settings.css",
-                      "~/Content/Loom/owl.carousel.css",
-                      "~/Content/Loom/settings.css",
-                      "~/Content/Loom/prettify.css",
-                      "~/Scripts/Loom/fancybox/jquery.fancybox.css",
-                      "~/Scripts/Loom/fancybox/helpers/jquery.fancybox-thumbs0ff5.css",
+                      "~/Content/Loom/owl.carousel.min.css",
+                      "~/Content/Loom/settings.min.css",
+                      "~/Content/Loom/prettify.min.css",
+                      "~/Scripts/Loom/fancybox/jquery.fancybox.min.css",
+                      "~/Scripts/Loom/fancybox/helpers/jquery.fancybox-thumbs0ff5.min.css",
                       "~/Content/Loom/style.css",
-                      "~/Content/Loom/green.css",
-                      "~/Content/Loom/fontello.css",
-                      "~/Content/Loom/picons.css",
-                      "~/Content/Loom/socialcss.css",
-                      "~/Content/Loom/socicon.css"
+                      "~/Content/Loom/green.min.css",
+                      "~/Content/Loom/fontello.min.css",
+                      "~/Content/Loom/picons.min.css",
+                      "~/Content/Loom/socialcss.min.css",
+                      "~/Content/Loom/socicon.min.css"
                       ));
             bundles.Add(new ScriptBundle("~/bundles/AradScript").Include(
                 "~/Scripts/Loom/jquery.min.js",
@@ -63,7 +63,6 @@ namespace AradMain
                         "~/Scripts/Loom/canvas.js",
                         "~/Scripts/Loom/scripts.js"
                         ));
-            BundleTable.EnableOptimizations = true;
         }
     }
 }

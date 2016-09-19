@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using AradCms.Core.Filters;
+using System.Web.Mvc;
 
 namespace AradMain.Controllers
 {

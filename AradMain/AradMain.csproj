@@ -338,7 +338,13 @@
     <Content Include="Content\error\style.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Loom\fontello.min.css">
+      <DependentUpon>fontello.css</DependentUpon>
+    </Content>
     <Content Include="Content\Loom\green.css" />
+    <Content Include="Content\Loom\green.min.css">
+      <DependentUpon>green.css</DependentUpon>
+    </Content>
     <Content Include="Content\Loom\images\author.jpg" />
     <Content Include="Content\Loom\images\bg.png" />
     <Content Include="Content\Loom\images\favicon.png" />
@@ -348,8 +354,26 @@
     <Content Include="Content\Loom\images\parallax1.jpg" />
     <Content Include="Content\Loom\images\parallax2.jpg" />
     <Content Include="Content\Loom\images\slider-transparent.png" />
+    <Content Include="Content\Loom\owl.carousel.min.css">
+      <DependentUpon>owl.carousel.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Loom\picons.min.css">
+      <DependentUpon>picons.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Loom\prettify.min.css">
+      <DependentUpon>prettify.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Loom\settings.min.css">
+      <DependentUpon>settings.css</DependentUpon>
+    </Content>
     <Content Include="Content\Loom\socialcss.css" />
+    <Content Include="Content\Loom\socialcss.min.css">
+      <DependentUpon>socialcss.css</DependentUpon>
+    </Content>
     <Content Include="Content\Loom\socicon.css" />
+    <Content Include="Content\Loom\socicon.min.css">
+      <DependentUpon>socicon.css</DependentUpon>
+    </Content>
     <Content Include="fonts\Entypo\entypo.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -362,6 +386,8 @@
     <Content Include="fonts\socicon\socicon.eot" />
     <Content Include="fonts\socicon\socicon.ttf" />
     <Content Include="fonts\socicon\socicon.woff" />
+    <None Include="bundleconfig.json" />
+    <Content Include="Content\Loom\style.min.css" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Content\Loom\images\software-developer-vs-software-engineer.jpg" />
     <Content Include="Content\Loom\images\timer.png" />
@@ -676,8 +702,6 @@
     <Content Include="Uploads\javaher.jpg" />
     <Content Include="Uploads\LICENSE.txt" />
     <Content Include="Uploads\roxy-fileman-logo.gif" />
-    <Content Include="Uploads\SiteMedia\Blog\rf_GyPgtZEyMMyxbb1mnkg.jpg" />
-    <Content Include="Uploads\SiteMedia\Site\software-developer-vs-software-engineer.jpg" />
     <Content Include="Content\Loom\images\softwer-eng.png" />
     <Content Include="Content\Loom\owl.carousel.css" />
     <Content Include="Content\Loom\prettify.css" />
@@ -1276,10 +1300,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\FLV\" />
     <Folder Include="Uploads\Images\" />
+    <Folder Include="Uploads\SiteMedia\Blog\" />
     <Folder Include="Uploads\SiteMedia\Category\" />
     <Folder Include="Uploads\SiteMedia\Portfoilo\" />
     <Folder Include="Uploads\SiteMedia\Post\" />
     <Folder Include="Uploads\SiteMedia\Reciept\" />
+    <Folder Include="Uploads\SiteMedia\Site\" />
     <Folder Include="Uploads\SiteMedia\Slider\" />
     <Folder Include="Uploads\Web\Documents\" />
   </ItemGroup>

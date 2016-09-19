@@ -226,18 +226,7 @@
         <!-- Page content -->
         <div class="page-content">
             <!-- Page header -->
-            <div class="page-header">
-                <div class="page-title">
-                    <h3>Narrow right sidebar <small>Narrow sidebar aligned to the right</small></h3>
-                </div>
-                <div id="reportrange" class="range">
-                    <div class="visible-xs header-element-toggle">
-                        <a class="btn btn-primary btn-icon"><i class="icon-calendar"></i></a>
-                    </div>
-                    <div class="date-range"></div>
-                    <span class="label label-danger">9</span>
-                </div>
-            </div>
+            @RenderSection("pageheader", required: false)
             <!-- /page header -->
             <!-- Breadcrumbs line -->
             <div class="breadcrumb-line">

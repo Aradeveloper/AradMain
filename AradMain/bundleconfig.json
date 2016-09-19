@@ -1,0 +1,68 @@
+[
+  {
+    "outputFileName": "Content/Loom/owl.carousel.min.css",
+    "inputFiles": [
+      "Content/Loom/owl.carousel.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/fontello.min.css",
+    "inputFiles": [
+      "Content/Loom/fontello.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/green.min.css",
+    "inputFiles": [
+      "Content/Loom/green.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/picons.min.css",
+    "inputFiles": [
+      "Content/Loom/picons.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/prettify.min.css",
+    "inputFiles": [
+      "Content/Loom/prettify.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/settings.min.css",
+    "inputFiles": [
+      "Content/Loom/settings.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/socialcss.min.css",
+    "inputFiles": [
+      "Content/Loom/socialcss.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/socicon.min.css",
+    "inputFiles": [
+      "Content/Loom/socicon.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Loom/style.min.css",
+    "inputFiles": [
+      "Content/Loom/style.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Loom/fancybox/jquery.fancybox.min.css",
+    "inputFiles": [
+      "Scripts/Loom/fancybox/jquery.fancybox.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Loom/fancybox/helpers/jquery.fancybox-thumbs0ff5.min.css",
+    "inputFiles": [
+      "Scripts/Loom/fancybox/helpers/jquery.fancybox-thumbs0ff5.css"
+    ]
+  }
+]

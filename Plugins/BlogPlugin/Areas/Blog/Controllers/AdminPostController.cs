@@ -99,7 +99,7 @@ namespace BlogPlugin.Areas.Blog.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult Edit(AddOrUpdatePost model, HttpPostedFileBase InputFile)
         {
-            string path = "~/Uploads/SiteMedia/Blog/";
+            string path = "~/Uploads/SiteMedia/Post/";
 
             if (InputFile != null)
             {

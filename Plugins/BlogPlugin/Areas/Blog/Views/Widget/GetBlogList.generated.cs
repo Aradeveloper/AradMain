@@ -111,16 +111,16 @@ WriteLiteral(" class=\"info\"");
 WriteLiteral(">بیشتر بخوانید</div>\r\n                                </div>\r\n                   " +
 "             <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 854), Tuple.Create("\"", 900)
-, Tuple.Create(Tuple.Create("", 860), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/")
+WriteAttribute("src", Tuple.Create(" src=\'", 854), Tuple.Create("\'", 906)
+, Tuple.Create(Tuple.Create("", 860), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/thumb_")
 , 860), false)
             
             #line 20 "..\..\Areas\Blog\Views\Widget\GetBlogList.cshtml"
-, Tuple.Create(Tuple.Create("", 885), Tuple.Create<System.Object, System.Int32>(item.PostImage
+, Tuple.Create(Tuple.Create("", 891), Tuple.Create<System.Object, System.Int32>(item.PostImage
             
             #line default
             #line hidden
-, 885), false)
+, 891), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -148,14 +148,14 @@ WriteLiteral(" class=\"post-title\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1301), Tuple.Create("\"", 1426)
+WriteAttribute("href", Tuple.Create(" href=\"", 1307), Tuple.Create("\"", 1432)
             
             #line 28 "..\..\Areas\Blog\Views\Widget\GetBlogList.cshtml"
-, Tuple.Create(Tuple.Create("", 1308), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 1314), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 1308), false)
+, 1314), false)
 );
 
 WriteLiteral(">");

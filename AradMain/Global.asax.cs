@@ -4,12 +4,14 @@ using StackExchange.Profiling;
 using StructureMap.Web.Pipeline;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.UI;
 
 namespace AradMain
 {
@@ -50,18 +52,6 @@ namespace AradMain
         }
 
         #endregion Application_EndRequest
-
-        #region Application_BeginRequest
-
-        private void Application_BeginRequest(object sender, EventArgs e)
-        {
-            if (Request.IsLocal)
-            {
-                MiniProfiler.Start();
-            }
-        }
-
-        #endregion Application_BeginRequest
 
         #region ShouldIgnoreRequest
 

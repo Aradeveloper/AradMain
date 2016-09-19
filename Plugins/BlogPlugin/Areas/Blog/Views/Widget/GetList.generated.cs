@@ -251,39 +251,10 @@ WriteLiteral("                <hr />\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        </div>\r\n        <div");
-
-WriteLiteral(" class=\"pagination\"");
-
-WriteLiteral(">\r\n            <ul>\r\n                <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">قبل</a></li>\r\n                <li");
-
-WriteLiteral(" class=\"active\"");
-
-WriteLiteral("><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">1</a></li>\r\n                <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">2</a></li>\r\n                <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">3</a></li>\r\n                <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">بعد</a></li>\r\n            </ul>\r\n        </div>\r\n        <!-- /.pagination -->\r\n" +
-"    </div>\r\n");
+WriteLiteral("        </div>\r\n\r\n        <!-- /.pagination -->\r\n    </div>\r\n");
 
             
-            #line 61 "..\..\Areas\Blog\Views\Widget\GetList.cshtml"
+            #line 53 "..\..\Areas\Blog\Views\Widget\GetList.cshtml"
 }
             
             #line default

@@ -43,7 +43,7 @@ namespace ASP
             #line 3 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
  if (Model != null)
 {
-    
+
 
             
             #line default
@@ -70,14 +70,14 @@ WriteLiteral(">\r\n\r\n");
             #line hidden
 WriteLiteral("            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 207), Tuple.Create("\"", 332)
+WriteAttribute("href", Tuple.Create(" href=\"", 203), Tuple.Create("\"", 328)
             
             #line 10 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
-, Tuple.Create(Tuple.Create("", 214), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 210), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 214), false)
+, 210), false)
 );
 
 WriteLiteral(">\r\n                <div");
@@ -94,16 +94,16 @@ WriteLiteral(" class=\"icon-border bm15\"");
 
 WriteLiteral("> <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 493), Tuple.Create("\"", 539)
-, Tuple.Create(Tuple.Create("", 499), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/")
-, 499), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 489), Tuple.Create("\"", 541)
+, Tuple.Create(Tuple.Create("", 495), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/thumb_")
+, 495), false)
             
             #line 14 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
-           , Tuple.Create(Tuple.Create("", 524), Tuple.Create<System.Object, System.Int32>(item.PostImage
+                 , Tuple.Create(Tuple.Create("", 526), Tuple.Create<System.Object, System.Int32>(item.PostImage
             
             #line default
             #line hidden
-, 524), false)
+, 526), false)
 );
 
 WriteLiteral(" class=\"img-thumbnail\"");
@@ -114,7 +114,7 @@ WriteLiteral(" width=\"200\"");
 
 WriteLiteral(" height=\"120\"");
 
-WriteLiteral("/>  </div>\r\n                        <h5");
+WriteLiteral(" />  </div>\r\n                        <h5");
 
 WriteLiteral(" class=\"upper\"");
 
@@ -127,11 +127,10 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</h5>\r\n                       \r\n                    </div>\r\n                </div" +
-">\r\n            </a>\r\n");
+WriteLiteral("</h5>\r\n                    </div>\r\n                </div>\r\n            </a>\r\n");
 
             
-            #line 20 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
+            #line 19 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
         }
 
             
@@ -140,8 +139,8 @@ WriteLiteral("</h5>\r\n                       \r\n                    </div>\r\n
 WriteLiteral("\r\n        <!-- /.item -->\r\n    </div>\r\n");
 
             
-            #line 24 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
-    
+            #line 23 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
+
 }
             
             #line default

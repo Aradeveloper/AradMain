@@ -11,9 +11,7 @@ namespace BlogPlugin.Configuration
         {
             Property(p => p.Name)
              .HasMaxLength(200)
-            .IsRequired()
-            .HasColumnAnnotation("Index",
-                new IndexAnnotation(new IndexAttribute("IX_TagName") { IsUnique = true }));
+            .IsRequired();
         }
     }
 }
