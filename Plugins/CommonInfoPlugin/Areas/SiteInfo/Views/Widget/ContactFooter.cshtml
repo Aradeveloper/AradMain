@@ -1,12 +1,11 @@
 ﻿@model AradCms.Core.ViewModel.Site.AddOrUpdateSiteInfo
 <div class="col-sm-3">
     <div class="widget">
-        <h3 class="widget-title upper">در تماس باشید</h3>
+        <strong class="widget-title upper">در تماس باشید</strong>
         <p>@Html.Raw(Model.SiteContact)</p>
         <div class="contact-info">
             <i class="icon-location"></i> @Html.DisplayFor(a => Model.SiteAddress) <br />
             <i class="icon-phone"></i>@Html.DisplayFor(a => Model.SitePhone)<br />
-            <i class="icon-mail"></i> <a href="mailto:@Model.EmailUsername">@Html.DisplayFor(a=>Model.EmailUsername)</a>
         </div>
     </div>
 </div>

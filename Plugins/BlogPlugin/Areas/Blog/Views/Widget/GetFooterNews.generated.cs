@@ -55,11 +55,11 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"widget\"");
 
-WriteLiteral(">\r\n            <h3");
+WriteLiteral(">\r\n            <strong");
 
 WriteLiteral(" class=\"widget-title upper\"");
 
-WriteLiteral(">مطالب محبوب</h3>\r\n            <ul");
+WriteLiteral(">مطالب محبوب</strong>\r\n            <ul");
 
 WriteLiteral(" class=\"post-list\"");
 
@@ -79,28 +79,28 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                    <li>\r\n                        <h6><a");
+WriteLiteral("                    <li>\r\n                        <strong><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 358), Tuple.Create("\"", 483)
+WriteAttribute("href", Tuple.Create(" href=\"", 370), Tuple.Create("\"", 495)
             
             #line 12 "..\..\Areas\Blog\Views\Widget\GetFooterNews.cshtml"
-, Tuple.Create(Tuple.Create("", 365), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 377), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 365), false)
+, 377), false)
 );
 
 WriteLiteral(">");
 
             
             #line 12 "..\..\Areas\Blog\Views\Widget\GetFooterNews.cshtml"
-                                                                                                                                                        Write(Html.DisplayFor(a => item.Title));
+                                                                                                                                                            Write(Html.DisplayFor(a => item.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("</a></h6>\r\n                        <em>");
+WriteLiteral("</a></strong>\r\n                        <em>");
 
             
             #line 13 "..\..\Areas\Blog\Views\Widget\GetFooterNews.cshtml"

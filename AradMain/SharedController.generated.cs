@@ -49,9 +49,9 @@ namespace T4MVC
                 public readonly string _ZoneCoworkers = "_ZoneCoworkers";
                 public readonly string _ZoneFooter = "_ZoneFooter";
                 public readonly string _ZoneNav = "_ZoneNav";
-                public readonly string _ZoneNewsList = "_ZoneNewsList";
                 public readonly string _ZonePortfoilo = "_ZonePortfoilo";
                 public readonly string _ZoneProcess = "_ZoneProcess";
+                public readonly string _ZoneServiceList = "_ZoneServiceList";
                 public readonly string _ZoneSideWidget = "_ZoneSideWidget";
                 public readonly string _ZoneSlider = "_ZoneSlider";
                 public readonly string _ZoneSocialSidebar = "_ZoneSocialSidebar";
@@ -69,9 +69,9 @@ namespace T4MVC
             public readonly string _ZoneCoworkers = "~/Views/Shared/_ZoneCoworkers.cshtml";
             public readonly string _ZoneFooter = "~/Views/Shared/_ZoneFooter.cshtml";
             public readonly string _ZoneNav = "~/Views/Shared/_ZoneNav.cshtml";
-            public readonly string _ZoneNewsList = "~/Views/Shared/_ZoneNewsList.cshtml";
             public readonly string _ZonePortfoilo = "~/Views/Shared/_ZonePortfoilo.cshtml";
             public readonly string _ZoneProcess = "~/Views/Shared/_ZoneProcess.cshtml";
+            public readonly string _ZoneServiceList = "~/Views/Shared/_ZoneServiceList.cshtml";
             public readonly string _ZoneSideWidget = "~/Views/Shared/_ZoneSideWidget.cshtml";
             public readonly string _ZoneSlider = "~/Views/Shared/_ZoneSlider.cshtml";
             public readonly string _ZoneSocialSidebar = "~/Views/Shared/_ZoneSocialSidebar.cshtml";

@@ -17,6 +17,38 @@ namespace AradMain
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        protected void Application_PreSendRequestHeaders(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.Headers.Remove("X-Powered-By");
+            HttpContext.Current.Response.Headers.Remove("X-AspNet-Version");
+            HttpContext.Current.Response.Headers.Remove("X-AspNetMvc-Version");
+            HttpContext.Current.Response.Headers.Remove("Server");
+        }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            // Implement HTTP compression
+            HttpApplication app = (HttpApplication)sender;
+
+            // Retrieve accepted encodings
+            string encodings = app.Request.Headers.Get("Accept-Encoding");
+            if (encodings != null)
+            {
+                // Check the browser accepts deflate or gzip (deflate takes preference)
+                encodings = encodings.ToLower();
+                if (encodings.Contains("deflate"))
+                {
+                    app.Response.Filter = new DeflateStream(app.Response.Filter, CompressionMode.Compress);
+                    app.Response.AppendHeader("Content-Encoding", "deflate");
+                }
+                else if (encodings.Contains("gzip"))
+                {
+                    app.Response.Filter = new GZipStream(app.Response.Filter, CompressionMode.Compress);
+                    app.Response.AppendHeader("Content-Encoding", "gzip");
+                }
+            }
+        }
+
         #region Application_Start
 
         protected void Application_Start()

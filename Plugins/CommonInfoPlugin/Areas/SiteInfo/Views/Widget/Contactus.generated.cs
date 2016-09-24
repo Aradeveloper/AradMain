@@ -63,14 +63,14 @@ WriteLiteral(" class=\"map\"");
 
 WriteLiteral(">\r\n            <iframe");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 256), Tuple.Create("\"", 282)
+WriteAttribute("src", Tuple.Create(" src=\"", 257), Tuple.Create("\"", 283)
             
             #line 10 "..\..\Areas\SiteInfo\Views\Widget\Contactus.cshtml"
-, Tuple.Create(Tuple.Create("", 262), Tuple.Create<System.Object, System.Int32>(Model.GooglemapCode
+, Tuple.Create(Tuple.Create("", 263), Tuple.Create<System.Object, System.Int32>(Model.GooglemapCode
             
             #line default
             #line hidden
-, 262), false)
+, 263), false)
 );
 
 WriteLiteral(" width=\"100%\"");
@@ -134,9 +134,9 @@ WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"sidebox widget\"");
 
-WriteLiteral(">\r\n                    <h3>آدرس</h3>\r\n                    <p>راه های تماس با ما ب" +
-"ه شرح زیر می باشد.</p>\r\n                    <address>\r\n                        <" +
-"p>");
+WriteLiteral(">\r\n                    <strong>آدرس</strong>\r\n                    <p>راه های تماس" +
+" با ما به شرح زیر می باشد.</p>\r\n                    <address>\r\n                 " +
+"       <p>");
 
             
             #line 27 "..\..\Areas\SiteInfo\Views\Widget\Contactus.cshtml"
@@ -158,17 +158,9 @@ WriteLiteral(">P:</abbr> ");
             
             #line default
             #line hidden
-WriteLiteral(" <br>\r\n                        <abbr");
-
-WriteLiteral(" title=\"Email\"");
-
-WriteLiteral(">E:</abbr> <a");
-
-WriteLiteral(" href=\"mailto:#\"");
-
-WriteLiteral(">Info@aradeveloper.ir</a>\r\n                    </address>\r\n                </div>" +
-"\r\n                <!-- /.widget -->\r\n            </aside>\r\n            <!-- /.co" +
-"l -->\r\n        </div>\r\n        <!-- /.row -->\r\n    </div>\r\n</div>\r\n");
+WriteLiteral(" <br>\r\n                    </address>\r\n                </div>\r\n                <!" +
+"-- /.widget -->\r\n            </aside>\r\n            <!-- /.col -->\r\n        </div" +
+">\r\n        <!-- /.row -->\r\n    </div>\r\n</div>\r\n");
 
 DefineSection("scripts", () => {
 
@@ -177,7 +169,7 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("    ");
 
             
-            #line 41 "..\..\Areas\SiteInfo\Views\Widget\Contactus.cshtml"
+            #line 40 "..\..\Areas\SiteInfo\Views\Widget\Contactus.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

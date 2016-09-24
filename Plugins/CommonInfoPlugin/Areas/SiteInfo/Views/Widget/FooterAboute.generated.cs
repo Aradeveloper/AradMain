@@ -47,11 +47,11 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"widget\"");
 
-WriteLiteral(">\r\n        <h3");
+WriteLiteral(">\r\n        <strong");
 
 WriteLiteral(" class=\"widget-title upper\"");
 
-WriteLiteral(">درباره ما</h3>\r\n");
+WriteLiteral(">درباره ما</strong>\r\n");
 
 WriteLiteral("        ");
 
@@ -70,7 +70,7 @@ WriteLiteral("></div>\r\n        <ul");
 
 WriteLiteral(" class=\"social\"");
 
-WriteLiteral(">\r\n            \r\n            <li><a");
+WriteLiteral(">\r\n\r\n            <li><a");
 
 WriteLiteral(" href=\"#\"");
 
@@ -106,7 +106,7 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral("><i");
 
-WriteLiteral(" class=\"icon-s-skype\"");
+WriteLiteral(" class=\"icon socicon-telegram\"");
 
 WriteLiteral("></i></a></li>\r\n        </ul>\r\n    </div>\r\n    <!-- /.widget -->\r\n</div>");
 

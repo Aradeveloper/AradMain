@@ -63,6 +63,7 @@ namespace AradMain
                         "~/Scripts/Loom/canvas.js",
                         "~/Scripts/Loom/scripts.js"
                         ));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

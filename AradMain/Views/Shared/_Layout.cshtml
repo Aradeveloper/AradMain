@@ -3,8 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="webdesigndl.com">
+
+    <meta name="description" content="طراح نرم افزارهای هوشمند چند سکویی وب و موبایل">
+    <meta name="keywords" content="طراحی وب,اندروید,ارتباط گستر آراد هیرکان,شبکه">
+    <meta http-equiv="Designer" content="AradCms">
+
+    <meta name="Generator" content="ارتباط گستر آراد هیرکان">
+
+    <meta name="Author" content="ارتباط گستر آراد هیرکان">
+
     <link rel="shortcut icon" href="@Links.Content.Loom.images.favicon_png">
     <title>
         @ViewBag.Title - @Html.Partial(MVC.Shared.Views._SiteName)
@@ -12,8 +19,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="publisher" href="https://plus.google.com/+Aradeveloper.ir">
     @Html.Partial(MVC.Shared.Views._Opengraph)
-    <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/css",false)" rel="stylesheet" />
 </head>
 <body>
 
@@ -31,12 +38,12 @@
     @Html.Partial(MVC.Shared.Views._ZoneContact)
 
     @Html.Partial(MVC.Shared.Views._ZoneSocialSidebar)
-
+    <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/css",false)" rel="stylesheet" async />
     <!-- /canvas -->
-    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/modernizr",false)"></script>
-    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/jquery",false)"></script>
-    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/bootstrap",false)"></script>
-    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/AradScript",false)"></script>
+    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/modernizr",false)" async></script>
+    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/jquery",false)" async></script>
+    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/bootstrap",false)" async></script>
+    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/bundles/AradScript",false)" async></script>
 
     @RenderSection("scripts", required: false)
 </body>

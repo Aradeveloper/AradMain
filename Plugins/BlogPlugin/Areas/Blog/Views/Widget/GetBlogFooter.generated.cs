@@ -113,28 +113,36 @@ WriteAttribute("src", Tuple.Create(" src=\"", 457), Tuple.Create("\"", 503)
 , 488), false)
 );
 
-WriteLiteral(" alt=\"tomato sandwich\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 504), Tuple.Create("\"", 521)
+            
+            #line 17 "..\..\Areas\Blog\Views\Widget\GetBlogFooter.cshtml"
+      , Tuple.Create(Tuple.Create("", 510), Tuple.Create<System.Object, System.Int32>(item.Title
+            
+            #line default
+            #line hidden
+, 510), false)
+);
 
-WriteLiteral(" />\r\n                            <h3>");
+WriteLiteral(" />\r\n                            <strong>");
 
             
             #line 18 "..\..\Areas\Blog\Views\Widget\GetBlogFooter.cshtml"
-                           Write(Html.DisplayFor(a => item.Title));
+                               Write(Html.DisplayFor(a => item.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>\r\n                            <h4>");
+WriteLiteral("</strong>\r\n                            <span>");
 
             
             #line 19 "..\..\Areas\Blog\Views\Widget\GetBlogFooter.cshtml"
-                           Write(Html.Raw(item.Summary));
+                             Write(Html.Raw(item.Summary));
 
             
             #line default
             #line hidden
-WriteLiteral("</h4>\r\n                        </a>\r\n                    </div>\r\n                " +
-"</div>\r\n            </li>\r\n");
+WriteLiteral("</span>\r\n                        </a>\r\n                    </div>\r\n              " +
+"  </div>\r\n            </li>\r\n");
 
             
             #line 24 "..\..\Areas\Blog\Views\Widget\GetBlogFooter.cshtml"

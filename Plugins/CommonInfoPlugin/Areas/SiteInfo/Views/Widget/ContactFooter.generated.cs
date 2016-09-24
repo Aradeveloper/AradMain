@@ -47,11 +47,11 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"widget\"");
 
-WriteLiteral(">\r\n        <h3");
+WriteLiteral(">\r\n        <strong");
 
 WriteLiteral(" class=\"widget-title upper\"");
 
-WriteLiteral(">در تماس باشید</h3>\r\n        <p>");
+WriteLiteral(">در تماس باشید</strong>\r\n        <p>");
 
             
             #line 5 "..\..\Areas\SiteInfo\Views\Widget\ContactFooter.cshtml"
@@ -90,33 +90,7 @@ WriteLiteral("></i>");
             
             #line default
             #line hidden
-WriteLiteral("<br />\r\n            <i");
-
-WriteLiteral(" class=\"icon-mail\"");
-
-WriteLiteral("></i> <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 461), Tuple.Create("\"", 495)
-, Tuple.Create(Tuple.Create("", 468), Tuple.Create("mailto:", 468), true)
-            
-            #line 9 "..\..\Areas\SiteInfo\Views\Widget\ContactFooter.cshtml"
-, Tuple.Create(Tuple.Create("", 475), Tuple.Create<System.Object, System.Int32>(Model.EmailUsername
-            
-            #line default
-            #line hidden
-, 475), false)
-);
-
-WriteLiteral(">");
-
-            
-            #line 9 "..\..\Areas\SiteInfo\Views\Widget\ContactFooter.cshtml"
-                                                                       Write(Html.DisplayFor(a=>Model.EmailUsername));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n        </div>\r\n    </div>\r\n</div>");
+WriteLiteral("<br />\r\n        </div>\r\n    </div>\r\n</div>");
 
         }
     }

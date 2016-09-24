@@ -59,11 +59,11 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        <h3");
+WriteLiteral("        <strong");
 
 WriteLiteral(" class=\"widget-title\"");
 
-WriteLiteral(">دسته بندی ها</h3>\r\n");
+WriteLiteral(">دسته بندی ها</strong>\r\n");
 
 WriteLiteral("        <ul");
 
@@ -87,14 +87,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 279), Tuple.Create("\"", 396)
+WriteAttribute("href", Tuple.Create(" href=\"", 287), Tuple.Create("\"", 404)
             
             #line 9 "..\..\Areas\Blog\Views\Widget\GetBlogSidebar.cshtml"
-, Tuple.Create(Tuple.Create("", 286), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.GetList,BMVC.Blog.Widget.Name,new {id=item.Id,area= BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 294), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.GetList,BMVC.Blog.Widget.Name,new {id=item.Id,area= BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 286), false)
+, 294), false)
 );
 
 WriteLiteral(">");

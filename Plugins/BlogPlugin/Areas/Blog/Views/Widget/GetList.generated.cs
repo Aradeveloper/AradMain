@@ -121,7 +121,15 @@ WriteAttribute("src", Tuple.Create(" src=\"", 756), Tuple.Create("\"", 802)
 , 787), false)
 );
 
-WriteLiteral(" alt=\"\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 803), Tuple.Create("\"", 820)
+            
+            #line 20 "..\..\Areas\Blog\Views\Widget\GetList.cshtml"
+      , Tuple.Create(Tuple.Create("", 809), Tuple.Create<System.Object, System.Int32>(item.Title
+            
+            #line default
+            #line hidden
+, 809), false)
+);
 
 WriteLiteral(" />\r\n                        </a>\r\n                    </figure>\r\n               " +
 "     <div");
@@ -151,14 +159,14 @@ WriteLiteral(" class=\"post-title\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1187), Tuple.Create("\"", 1312)
+WriteAttribute("href", Tuple.Create(" href=\"", 1198), Tuple.Create("\"", 1323)
             
             #line 28 "..\..\Areas\Blog\Views\Widget\GetList.cshtml"
-, Tuple.Create(Tuple.Create("", 1194), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 1205), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 1194), false)
+, 1205), false)
 );
 
 WriteLiteral(">\r\n");
@@ -225,14 +233,14 @@ WriteLiteral(" نظر\r\n                                </a>\r\n               
             #line hidden
 WriteLiteral("</p>\r\n                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1947), Tuple.Create("\"", 2072)
+WriteAttribute("href", Tuple.Create(" href=\"", 1958), Tuple.Create("\"", 2083)
             
             #line 40 "..\..\Areas\Blog\Views\Widget\GetList.cshtml"
-, Tuple.Create(Tuple.Create("", 1954), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 1965), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 1954), false)
+, 1965), false)
 );
 
 WriteLiteral(" class=\"more\"");

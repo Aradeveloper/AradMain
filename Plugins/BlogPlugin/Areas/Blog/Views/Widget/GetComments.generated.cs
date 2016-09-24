@@ -51,7 +51,7 @@ WriteLiteral("    <div");
 
 WriteLiteral(" id=\"comments\"");
 
-WriteLiteral(">\r\n        <h3></h3>\r\n        <ol");
+WriteLiteral(">\r\n\r\n        <ol");
 
 WriteLiteral(" id=\"singlecomments\"");
 
@@ -81,9 +81,9 @@ WriteLiteral("><img");
 
 WriteLiteral(" alt=\"\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 301), Tuple.Create("\"", 335)
-, Tuple.Create(Tuple.Create("", 307), Tuple.Create<System.Object, System.Int32>(Href("~/Content/Loom/images/u1.jpg")
-, 307), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 284), Tuple.Create("\"", 318)
+, Tuple.Create(Tuple.Create("", 290), Tuple.Create<System.Object, System.Int32>(Href("~/Content/Loom/images/u1.jpg")
+, 290), false)
 );
 
 WriteLiteral(" class=\"avatar\"");

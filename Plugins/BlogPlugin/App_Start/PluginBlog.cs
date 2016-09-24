@@ -53,7 +53,7 @@ namespace BlogPlugin
             List<MenuItem> model = new List<MenuItem>();
             model.Add(new MenuItem { Name = "بلاگ", Controller = "AdminBlog", Action = "List", Area = "Blog", IsAuthorize = true, Slag = "بلاگ", IsWidget = false, Parent = Guid.Empty });
             model.Add(new MenuItem { Name = "نمایش محتوای بلاگ", Controller = "Widget", Action = "GetBlogList", Area = "Blog", IsAuthorize = false, Slag = "", IsWidget = true, Parent = Guid.Empty, WidgetZoneName = "ZoneBlogList" });
-            model.Add(new MenuItem { Name = "نمایش محتوای بلاگ", Controller = "Widget", Action = "GetNewsList", Area = "Blog", IsAuthorize = false, Slag = "", IsWidget = true, Parent = Guid.Empty, WidgetZoneName = "ZoneNewsList" });
+            model.Add(new MenuItem { Name = "نمایش خدمات در صفحه اول", Controller = "Widget", Action = "GetServiceList", Area = "Blog", IsAuthorize = false, Slag = "", IsWidget = true, Parent = Guid.Empty, WidgetZoneName = "ZoneServiceList" });
             model.Add(new MenuItem { Name = "نمایش محتوای بلاگ", Controller = "Widget", Action = "GetBlogFooter", Area = "Blog", IsAuthorize = false, Slag = "", IsWidget = true, Parent = Guid.Empty, WidgetZoneName = "ZoneFooter" });
             model.Add(new MenuItem { Name = "بلاگ", Controller = "Widget", Action = "GetList", Area = "Blog", IsAuthorize = false, Slag = "بلاگ", IsWidget = false, Parent = Guid.Empty, item = "1", WidgetZoneName = "ZoneMainMenu" });
             model.Add(new MenuItem { Name = "خبر", Controller = "Widget", Action = "GetList", Area = "Blog", IsAuthorize = false, Slag = "خبر", IsWidget = false, Parent = Guid.Empty, item = "2", WidgetZoneName = "ZoneMainMenu" });

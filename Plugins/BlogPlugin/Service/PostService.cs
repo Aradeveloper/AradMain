@@ -46,24 +46,28 @@ namespace BlogPlugin.Service
 
         public void Add(AddOrUpdatePost model)
         {
-            string[] sample = model.Tags.Split(',');
-
             List<Tag> taglist = new List<Tag>();
             List<Tag> existtaglist = new List<Tag>();
-            foreach (var item in sample)
+            if (model.Tags != null)
             {
-                Tag newtags = new Tag();
-                if (!checketag(item))
-                {
-                    newtags.Name = item;
+                string[] sample = model.Tags.Split(',');
 
-                    taglist.Add(_tag.Add(newtags));
-                }
-                else
+                foreach (var item in sample)
                 {
-                    existtaglist.Add(_tag.Where(a => a.Name == item).FirstOrDefault());
+                    Tag newtags = new Tag();
+                    if (!checketag(item))
+                    {
+                        newtags.Name = item;
+
+                        taglist.Add(_tag.Add(newtags));
+                    }
+                    else
+                    {
+                        existtaglist.Add(_tag.Where(a => a.Name == item).FirstOrDefault());
+                    }
                 }
             }
+
             BlogPost addpost = new BlogPost { Published = model.Published, ImagePath = model.PostImage, BlogId = model.BlogId, Body = model.Body, Slug = model.Slug, CreateTime = DateTime.Now, EditTime = DateTime.Now, Title = model.Title, Summary = model.Summary, Blog = _blog.Find(model.BlogId), Tag = taglist, CommentStatuse = model.CommentStatuse };
             var modelpost = _post.Add(addpost);
             modelpost.Tag = existtaglist;
@@ -217,11 +221,10 @@ namespace BlogPlugin.Service
         public void Update(AddOrUpdatePost model)
         {
             List<Tag> taglist = new List<Tag>();
-            
-            if (model.Tags != null) {
-                string[] sample = model.Tags.Split(',');
 
-                
+            if (model.Tags != null)
+            {
+                string[] sample = model.Tags.Split(',');
 
                 foreach (var item in sample)
                 {
@@ -233,25 +236,22 @@ namespace BlogPlugin.Service
                         taglist.Add(_tag.Add(newtags));
                         _uow.SaveAllChanges();
                     }
-                    
-
                 }
             }
-           
+
             BlogPost post = _post.Find(model.Id);
             post.Body = model.Body;
             post.Published = model.Published;
             post.Title = model.Title;
             post.Slug = model.Slug;
             post.Summary = model.Summary;
-            
+
             post.ImagePath = model.PostImage;
             post.EditTime = DateTime.Now;
             post.Tag = taglist;
-            
+
             post.BlogId = model.BlogId;
             post.CommentStatuse = model.CommentStatuse;
-            
         }
 
         public IList<DataTablePost> GetLatestPost()
@@ -297,7 +297,7 @@ namespace BlogPlugin.Service
                              CreateTime = a.CreateTime,
                              Title = a.Title,
                              UserName = a.UserName,
-                             CommentStatuse=a.CommentStatuse,
+                             CommentStatuse = a.CommentStatuse,
                              Tags = a.Tag.ToList()
                          }
                          ).Where(x => x.Id == id).FirstOrDefault();

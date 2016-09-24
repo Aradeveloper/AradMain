@@ -42,21 +42,27 @@ namespace BlogPlugin.Areas.Blog.Controllers
         [HttpGet]
         public virtual ActionResult GetBlogList()
         {
-            var model = _postservice.GetVisiblePosts("بلاگ");
+            var model = _postservice.GetVisiblePosts(1);
             return PartialView(BMVC.Blog.Widget.Views.GetBlogList, model);
         }
 
         [HttpGet]
         public virtual ActionResult GetNewsList()
         {
-            var model = _postservice.GetVisiblePosts("خبرها");
+            var model = _postservice.GetVisiblePosts(2);
+            return PartialView(BMVC.Blog.Widget.Views.GetNewsList, model);
+        }
+
+        public virtual ActionResult GetServiceList()
+        {
+            var model = _postservice.GetVisiblePosts(4);
             return PartialView(BMVC.Blog.Widget.Views.GetNewsList, model);
         }
 
         [HttpGet]
         public virtual ActionResult GetBlogFooter()
         {
-            var model = _postservice.GetVisiblePosts("بیشتر");
+            var model = _postservice.GetVisiblePosts(3);
             return PartialView(BMVC.Blog.Widget.Views.GetBlogFooter, model);
         }
 

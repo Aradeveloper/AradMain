@@ -42,8 +42,7 @@ namespace ASP
             #line 2 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
  if (Model != null)
 {
-   
-   
+
 
             
             #line default
@@ -59,13 +58,13 @@ WriteLiteral(" class=\"banner\"");
 WriteLiteral(">\r\n            <ul>\r\n");
 
             
-            #line 9 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 8 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 8 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
                  foreach (var item in Model)
                 {
 
@@ -79,21 +78,21 @@ WriteLiteral(" data-transition=\"fade\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 329), Tuple.Create("\"", 377)
-, Tuple.Create(Tuple.Create("", 335), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Slider/")
-, 335), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 321), Tuple.Create("\"", 369)
+, Tuple.Create(Tuple.Create("", 327), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Slider/")
+, 327), false)
             
-            #line 13 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
-, Tuple.Create(Tuple.Create("", 362), Tuple.Create<System.Object, System.Int32>(item.ImagePath
+            #line 12 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+, Tuple.Create(Tuple.Create("", 354), Tuple.Create<System.Object, System.Int32>(item.ImagePath
             
             #line default
             #line hidden
-, 362), false)
+, 354), false)
 );
 
 WriteLiteral(" style=\"background-color: #65676e;\"");
 
-WriteLiteral(" alt=\"\"");
+WriteLiteral(" alt=\"اسلایدر\"");
 
 WriteLiteral(" />\r\n                        <div");
 
@@ -114,7 +113,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 15 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 14 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
                        Write(Html.DisplayFor(a => item.TitleOne));
 
             
@@ -124,9 +123,9 @@ WriteLiteral("\r\n                        </div>\r\n                        <div
 
 WriteLiteral(" class=\"caption sfb lower white-bg \"");
 
-WriteLiteral("data-x=\"850\"");
+WriteLiteral(" data-x=\"850\"");
 
-WriteLiteral("  data-y=\"180\"");
+WriteLiteral(" data-y=\"180\"");
 
 WriteLiteral(" data-speed=\"900\"");
 
@@ -137,7 +136,7 @@ WriteLiteral(" data-easing=\"Sine.easeOut\"");
 WriteLiteral(">");
 
             
-            #line 17 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 16 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
                                                                                                                                                     Write(Html.DisplayFor(a => item.TitleTwo));
 
             
@@ -160,7 +159,7 @@ WriteLiteral(" data-easing=\"Sine.easeOut\"");
 WriteLiteral(">");
 
             
-            #line 18 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 17 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
                                                                                                                                                     Write(Html.DisplayFor(a => item.TitleThree));
 
             
@@ -169,7 +168,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n                    </li>\r\n");
 
             
-            #line 20 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 19 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
 
                 }
 
@@ -183,7 +182,7 @@ WriteLiteral(" class=\"tp-bannertimer tp-bottom\"");
 WriteLiteral("></div>\r\n        </div>\r\n        <!-- /.banner -->\r\n    </div>\r\n");
 
             
-            #line 27 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
+            #line 26 "..\..\Areas\Sliders\Views\SliderWidget\SliderShow.cshtml"
 
 }
             

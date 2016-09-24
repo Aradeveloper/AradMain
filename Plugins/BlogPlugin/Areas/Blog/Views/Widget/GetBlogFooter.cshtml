@@ -14,9 +14,9 @@
                 <div>
                     <div class="textSlide">
                         <a href="@Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })">>
-                            <img src="~/Uploads/SiteMedia/Post/@item.PostImage" alt="tomato sandwich" />
-                            <h3>@Html.DisplayFor(a => item.Title)</h3>
-                            <h4>@Html.Raw(item.Summary)</h4>
+                            <img src="~/Uploads/SiteMedia/Post/@item.PostImage" alt="@item.Title" />
+                            <strong>@Html.DisplayFor(a => item.Title)</strong>
+                            <span>@Html.Raw(item.Summary)</span>
                         </a>
                     </div>
                 </div>

@@ -1821,15 +1821,20 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string fontello_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fontello.min.css") ? Url("fontello.min.css") : Url("fontello.css");
+            public static readonly string fontello_min_css = Url("fontello.min.css");
             public static readonly string green_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/green.min.css") ? Url("green.min.css") : Url("green.css");
+            public static readonly string green_min_css = Url("green.min.css");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class images {
                 public const string UrlPath = "~/Content/Loom/images";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string author_jpg = Url("author.jpg");
+                public static readonly string bg_png = Url("bg.png");
                 public static readonly string favicon_png = Url("favicon.png");
                 public static readonly string logo_png = Url("logo.png");
                 public static readonly string logo_2x_png = Url("logo@2x.png");
+                public static readonly string page_background_png = Url("page-background.png");
                 public static readonly string parallax1_jpg = Url("parallax1.jpg");
                 public static readonly string parallax2_jpg = Url("parallax2.jpg");
                 public static readonly string slider_transparent_png = Url("slider-transparent.png");
@@ -1840,12 +1845,19 @@ namespace Links
             }
         
             public static readonly string owl_carousel_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/owl.carousel.min.css") ? Url("owl.carousel.min.css") : Url("owl.carousel.css");
+            public static readonly string owl_carousel_min_css = Url("owl.carousel.min.css");
             public static readonly string picons_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/picons.min.css") ? Url("picons.min.css") : Url("picons.css");
+            public static readonly string picons_min_css = Url("picons.min.css");
             public static readonly string prettify_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/prettify.min.css") ? Url("prettify.min.css") : Url("prettify.css");
+            public static readonly string prettify_min_css = Url("prettify.min.css");
             public static readonly string settings_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/settings.min.css") ? Url("settings.min.css") : Url("settings.css");
+            public static readonly string settings_min_css = Url("settings.min.css");
             public static readonly string socialcss_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/socialcss.min.css") ? Url("socialcss.min.css") : Url("socialcss.css");
+            public static readonly string socialcss_min_css = Url("socialcss.min.css");
             public static readonly string socicon_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/socicon.min.css") ? Url("socicon.min.css") : Url("socicon.css");
+            public static readonly string socicon_min_css = Url("socicon.min.css");
             public static readonly string style_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/style.min.css") ? Url("style.min.css") : Url("style.css");
+            public static readonly string style_min_css = Url("style.min.css");
         }
     
         public static readonly string PagedList_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/PagedList.min.css") ? Url("PagedList.min.css") : Url("PagedList.css");
@@ -3092,6 +3104,7 @@ namespace Links
                     public const string socialcss_css = "~/Content/Loom/socialcss.css";
                     public const string socicon_css = "~/Content/Loom/socicon.css";
                     public const string style_css = "~/Content/Loom/style.css";
+                    public const string style_min_css = "~/Content/Loom/style.min.css";
                 }
             }
             public static partial class themes 

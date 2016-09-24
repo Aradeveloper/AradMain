@@ -108,6 +108,15 @@ namespace FormPlugin.Areas.FormPlug.Controllers
         {
             public readonly string Code = "Code";
         }
+        static readonly ActionParamsClass_UploadRecipt s_params_UploadRecipt = new ActionParamsClass_UploadRecipt();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UploadRecipt UploadReciptParams { get { return s_params_UploadRecipt; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UploadRecipt
+        {
+            public readonly string model = "model";
+            public readonly string InputFile = "InputFile";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -176,6 +185,19 @@ namespace FormPlugin.Areas.FormPlug.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadRecipt);
             UploadReciptOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UploadReciptOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, FormPlugin.ViewModel.AddOrUpdateReceipt model, System.Web.HttpPostedFileBase InputFile);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UploadRecipt(FormPlugin.ViewModel.AddOrUpdateReceipt model, System.Web.HttpPostedFileBase InputFile)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadRecipt);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "InputFile", InputFile);
+            UploadReciptOverride(callInfo, model, InputFile);
             return callInfo;
         }
 

@@ -7,3 +7,14 @@
 <meta property="og:image:height" content="478" />
 <meta property="og:site_name" content="@Html.Partial(MVC.Shared.Views._SiteName)" />
 <meta property="og:description" content="@ViewBag.Description" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@Html.Partial(MVC.Shared.Views._SiteName)" />
+<meta name="twitter:creator" content="@Html.Partial(MVC.Shared.Views._SiteName)" />
+<meta property="og:url" content="@HttpContext.Current.Request.Url.AbsoluteUri" />
+<meta name="twitter:title" content="@ViewBag.Title">
+<meta name="twitter:description" content="@ViewBag.Description">
+<meta property="og:title" content="@ViewBag.Title" />
+<meta property="og:description" content="@ViewBag.Description" />
+<meta property="og:image" content="@ViewBag.Image" />

@@ -77,7 +77,15 @@ WriteAttribute("src", Tuple.Create(" src=\"", 436), Tuple.Create("\"", 483)
 , 467), false)
 );
 
-WriteLiteral(" alt=\"\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 484), Tuple.Create("\"", 502)
+            
+            #line 13 "..\..\Areas\Blog\Views\Widget\Detailes.cshtml"
+, Tuple.Create(Tuple.Create("", 490), Tuple.Create<System.Object, System.Int32>(Model.Title
+            
+            #line default
+            #line hidden
+, 490), false)
+);
 
 WriteLiteral(" /></figure>\r\n            <div");
 
@@ -254,9 +262,9 @@ WriteLiteral("> <img");
 
 WriteLiteral(" alt=\"\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2096), Tuple.Create("\"", 2134)
-, Tuple.Create(Tuple.Create("", 2102), Tuple.Create<System.Object, System.Int32>(Href("~/Content/Loom/images/author.jpg")
-, 2102), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2108), Tuple.Create("\"", 2146)
+, Tuple.Create(Tuple.Create("", 2114), Tuple.Create<System.Object, System.Int32>(Href("~/Content/Loom/images/author.jpg")
+, 2114), false)
 );
 
 WriteLiteral(" /> </div>\r\n        <div");

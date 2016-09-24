@@ -51,11 +51,11 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"sidebox widget\"");
 
-WriteLiteral(">\r\n        <h3");
+WriteLiteral(">\r\n        <strong");
 
 WriteLiteral(" class=\"widget-title\"");
 
-WriteLiteral(">\r\n            پر بازدیدترین مطالب\r\n        </h3>\r\n        <ul");
+WriteLiteral(">\r\n            پر بازدیدترین مطالب\r\n        </strong>\r\n        <ul");
 
 WriteLiteral(" class=\"post-list\"");
 
@@ -81,46 +81,54 @@ WriteLiteral(" class=\"icon-overlay\"");
 
 WriteLiteral("> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 361), Tuple.Create("\"", 486)
+WriteAttribute("href", Tuple.Create(" href=\"", 369), Tuple.Create("\"", 494)
             
             #line 12 "..\..\Areas\Blog\Views\Widget\GetPopullore.cshtml"
-, Tuple.Create(Tuple.Create("", 368), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
+, Tuple.Create(Tuple.Create("", 376), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes, BMVC.Blog.Widget.Name, new { Id = item.Id, area = BMVC.Blog.Name })
             
             #line default
             #line hidden
-, 368), false)
+, 376), false)
 );
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 492), Tuple.Create("\"", 538)
-, Tuple.Create(Tuple.Create("", 498), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/")
-, 498), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 500), Tuple.Create("\"", 546)
+, Tuple.Create(Tuple.Create("", 506), Tuple.Create<System.Object, System.Int32>(Href("~/Uploads/SiteMedia/Post/")
+, 506), false)
             
             #line 12 "..\..\Areas\Blog\Views\Widget\GetPopullore.cshtml"
-                                                                                                                                    , Tuple.Create(Tuple.Create("", 523), Tuple.Create<System.Object, System.Int32>(item.PostImage
+                                                                                                                                    , Tuple.Create(Tuple.Create("", 531), Tuple.Create<System.Object, System.Int32>(item.PostImage
             
             #line default
             #line hidden
-, 523), false)
+, 531), false)
 );
 
-WriteLiteral(" alt=\"\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 547), Tuple.Create("\"", 564)
+            
+            #line 12 "..\..\Areas\Blog\Views\Widget\GetPopullore.cshtml"
+                                                                                                                                                          , Tuple.Create(Tuple.Create("", 553), Tuple.Create<System.Object, System.Int32>(item.Title
+            
+            #line default
+            #line hidden
+, 553), false)
+);
 
 WriteLiteral(" /> </a> </div>\r\n                    <div");
 
 WriteLiteral(" class=\"meta\"");
 
-WriteLiteral(">\r\n                        <h6>\r\n                            <a");
+WriteLiteral(">\r\n                        <strong>\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 663), Tuple.Create("\"", 781)
+WriteAttribute("href", Tuple.Create(" href=\"", 686), Tuple.Create("\"", 804)
             
             #line 15 "..\..\Areas\Blog\Views\Widget\GetPopullore.cshtml"
-, Tuple.Create(Tuple.Create("", 670), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes,BMVC.Blog.Widget.Name,new { Id=item.Id,area= BMVC.Blog.Name})
+, Tuple.Create(Tuple.Create("", 693), Tuple.Create<System.Object, System.Int32>(Url.Action(BMVC.Blog.Widget.ActionNames.Detailes,BMVC.Blog.Widget.Name,new { Id=item.Id,area= BMVC.Blog.Name})
             
             #line default
             #line hidden
-, 670), false)
+, 693), false)
 );
 
 WriteLiteral(">\r\n");
@@ -134,8 +142,8 @@ WriteLiteral("                                ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                            </a>\r\n                        </h6>\r\n              " +
-"          <em>");
+WriteLiteral("\r\n                            </a>\r\n                        </strong>\r\n          " +
+"              <em>");
 
             
             #line 19 "..\..\Areas\Blog\Views\Widget\GetPopullore.cshtml"

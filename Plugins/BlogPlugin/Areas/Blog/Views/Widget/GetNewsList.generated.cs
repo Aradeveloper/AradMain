@@ -108,13 +108,21 @@ WriteAttribute("src", Tuple.Create(" src=\"", 489), Tuple.Create("\"", 541)
 
 WriteLiteral(" class=\"img-thumbnail\"");
 
-WriteLiteral(" alt=\"Cinque Terre\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 564), Tuple.Create("\"", 581)
+            
+            #line 14 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
+                                                             , Tuple.Create(Tuple.Create("", 570), Tuple.Create<System.Object, System.Int32>(item.Title
+            
+            #line default
+            #line hidden
+, 570), false)
+);
 
 WriteLiteral(" width=\"200\"");
 
 WriteLiteral(" height=\"120\"");
 
-WriteLiteral(" />  </div>\r\n                        <h5");
+WriteLiteral(" />  </div>\r\n                        <strong");
 
 WriteLiteral(" class=\"upper\"");
 
@@ -122,12 +130,13 @@ WriteLiteral(">");
 
             
             #line 15 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
-                                     Write(Html.DisplayFor(a => item.Title));
+                                         Write(Html.DisplayFor(a => item.Title));
 
             
             #line default
             #line hidden
-WriteLiteral("</h5>\r\n                    </div>\r\n                </div>\r\n            </a>\r\n");
+WriteLiteral("</strong>\r\n                    </div>\r\n                </div>\r\n            </a>\r\n" +
+"");
 
             
             #line 19 "..\..\Areas\Blog\Views\Widget\GetNewsList.cshtml"
